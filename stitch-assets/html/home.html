@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shohojatri | Psychosocial Welfare Initiative</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "background": "#fbf9f8",
+              "tertiary-fixed": "#ffd9e0",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#1b1c1c",
+              "on-secondary": "#ffffff",
+              "secondary": "#446900",
+              "surface-container-highest": "#e4e2e1",
+              "on-secondary-container": "#486f00",
+              "secondary-fixed-dim": "#92db00",
+              "primary-fixed": "#b1f0ce",
+              "on-tertiary-fixed": "#3f0019",
+              "primary-fixed-dim": "#96d4b3",
+              "on-error-container": "#93000a",
+              "surface-tint": "#2d694e",
+              "on-tertiary-container": "#ffcdd7",
+              "inverse-primary": "#96d4b3",
+              "on-background": "#1b1c1c",
+              "surface-container": "#f0eded",
+              "surface-container-high": "#eae8e7",
+              "outline-variant": "#bfc9c1",
+              "primary-container": "#2e6a4f",
+              "surface-dim": "#dcd9d9",
+              "inverse-surface": "#303030",
+              "primary": "#115238",
+              "outline": "#707973",
+              "tertiary": "#7e2844",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed-variant": "#105138",
+              "on-tertiary-fixed-variant": "#7d2743",
+              "surface-variant": "#e4e2e1",
+              "secondary-container": "#abf926",
+              "on-error": "#ffffff",
+              "on-secondary-fixed": "#111f00",
+              "error-container": "#ffdad6",
+              "on-secondary-fixed-variant": "#324f00",
+              "on-primary-fixed": "#002113",
+              "surface-bright": "#fbf9f8",
+              "tertiary-container": "#9c405b",
+              "surface": "#fbf9f8",
+              "secondary-fixed": "#abf926",
+              "on-primary": "#ffffff",
+              "on-surface-variant": "#404943",
+              "inverse-on-surface": "#f3f0f0",
+              "tertiary-fixed-dim": "#ffb1c3",
+              "surface-container-low": "#f6f3f2",
+              "error": "#ba1a1a",
+              "on-primary-container": "#a9e7c5"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.serif-italic {
+    font-family: "Newsreader", serif;
+    font-style: italic
+    }
+.serif-regular {
+    font-family: "Newsreader", serif
+    }
+.glass-nav {
+    background: rgba(251, 249, 248, 0.8);
+    backdrop-filter: blur(12px)
+    }
+.ribbon-rotate:hover {
+    transform: rotate(12deg);
+    transition: transform 0.3s ease
+    }
+.bg-grain {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBJbxdc-mFAVOQUE8VHvyYFKO3vIdNJGaoemPHkYV-kMnfFdXhuhmhx9LZvoGr9vhDEeo4ZQjej-tu_kWc58GmLRdbqSkhAkwIOwhkrO3TqumJZ2jMeiilPlIvRLS-zA67leDpEFH0Cc6OPnCJtc4AXSqu9BtK4U5DeRSmugZ6Nbw8gKIOAINiXqX3dya7-CZdt09MRKfz0mUS-Dp-HOa1laGUev38MkQ_OXZSNLOPa7XTQEzsa5KZbn84vV85eH_RdxNv5hLMn4fR8)
+    }</style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopNavBar -->
+<nav class="h-[72px] fixed top-0 w-full z-[100] bg-[#fbf9f8]/80 dark:bg-stone-900/80 backdrop-blur-md border-b border-[#2e6a4f]/10 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-8 max-w-[1280px] mx-auto w-full h-full">
+<div class="font-serif text-[20px] font-bold text-[#2e6a4f] dark:text-[#9ae600] flex flex-col items-start leading-none">
+<span class="tracking-tight uppercase">SHOHOJATRI</span>
+</div>
+<div class="hidden md:flex gap-8 font-serif Mercury text-[13px] tracking-tight">
+<a class="text-[#7e2844] border-b-2 border-[#9ae600] pb-1 transition-colors duration-300" href="#">Home</a>
+<a class="text-[#2e6a4f] dark:text-stone-300 hover:text-[#7e2844] transition-colors duration-300" href="#">Achintya</a>
+<a class="text-[#2e6a4f] dark:text-stone-300 hover:text-[#7e2844] transition-colors duration-300" href="#">Gallery</a>
+<a class="text-[#2e6a4f] dark:text-stone-300 hover:text-[#7e2844] transition-colors duration-300" href="#">Blog</a>
+<a class="text-[#2e6a4f] dark:text-stone-300 hover:text-[#7e2844] transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-[#115238] text-white px-6 py-2 rounded-full font-label text-sm tracking-wide scale-95 active:scale-90 transition-transform hover:shadow-lg hover:shadow-secondary/20">
+                Walk With Us →
+            </button>
+</div>
+</nav>
+<main>
+<!-- HERO SECTION -->
+<section class="relative min-h-screen flex items-center overflow-hidden pt-[72px]">
+<!-- Background Elements -->
+<div class="absolute inset-0 z-0">
+<div class="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-[#2e6a4f]/5 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-5%] left-[5%] w-[400px] h-[400px] bg-[#9ae600]/4 rounded-full blur-[100px]"></div>
+<div class="absolute top-[20%] left-[40%] w-[300px] h-[300px] bg-[#C25E7A]/4 rounded-full blur-[80px]"></div>
+<div class="absolute inset-0 bg-grain opacity-[0.035]"></div>
+<!-- Horizontal Rule Lines -->
+<div class="absolute inset-0 flex flex-col justify-between py-24 opacity-[0.04]">
+<div class="h-[1px] bg-[#2e6a4f] w-full"></div>
+<div class="h-[1px] bg-[#2e6a4f] w-full"></div>
+<div class="h-[1px] bg-[#2e6a4f] w-full"></div>
+<div class="h-[1px] bg-[#2e6a4f] w-full"></div>
+<div class="h-[1px] bg-[#2e6a4f] w-full"></div>
+<div class="h-[1px] bg-[#2e6a4f] w-full"></div>
+</div>
+<!-- Large Rotating Ribbon -->
+<div class="absolute right-[-100px] top-1/2 -translate-y-1/2 opacity-[0.07] rotate-[15deg] pointer-events-none">
+<span class="material-symbols-outlined text-[600px] text-[#2e6a4f]" style="font-variation-settings: 'wght' 100;">reminder</span>
+</div>
+</div>
+<div class="relative z-10 max-w-[1280px] mx-auto w-full px-8 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<!-- Content Left -->
+<div class="md:col-span-7 space-y-8">
+<div class="inline-flex items-center gap-2 bg-[#2e6a4f]/5 px-4 py-1.5 rounded-full">
+<span class="material-symbols-outlined text-xs text-[#2e6a4f]" style="font-variation-settings: 'FILL' 1;">reminder</span>
+<span class="font-label text-[12px] uppercase tracking-[0.1em] text-[#2e6a4f]">A Debangana Bhattacharya Initiative</span>
+</div>
+<h1 class="flex flex-col gap-0">
+<span class="serif-italic text-7xl md:text-[96px] leading-none text-[#2e6a4f]">Walking Together</span>
+<span class="serif-regular text-7xl md:text-[96px] leading-tight text-[#2e6a4f]">Toward Wellbeing.</span>
+</h1>
+<p class="font-label text-lg text-[#3a3a3a] leading-[1.7] max-w-[520px] font-light">
+                        Shohojatri is a psychosocial welfare initiative dedicated to emotional empowerment, resilience, and the journey of healing — together.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-[#115238] text-white px-8 py-4 rounded-full font-label text-base hover:shadow-xl transition-all">Begin the Journey</button>
+<button class="border border-[#115238] text-[#115238] px-8 py-4 rounded-full font-label text-base hover:bg-[#115238]/5 transition-all">Our Story ↓</button>
+</div>
+<div class="pt-12">
+<div class="h-[1px] bg-outline-variant/30 w-full mb-4"></div>
+<div class="flex items-center gap-6 text-[12px] uppercase tracking-[0.1em] text-outline font-label">
+<span>500+ Lives Touched</span>
+<span class="material-symbols-outlined text-[8px] text-[#2e6a4f]" style="font-variation-settings: 'FILL' 1;">reminder</span>
+<span>30+ Workshops</span>
+<span class="material-symbols-outlined text-[8px] text-[#2e6a4f]" style="font-variation-settings: 'FILL' 1;">reminder</span>
+<span>Est. 2020</span>
+</div>
+</div>
+</div>
+<!-- Floating Card Right -->
+<div class="md:col-span-5 flex justify-end">
+<div class="bg-white/80 backdrop-blur-xl p-10 rounded-xl shadow-2xl shadow-[#2e6a4f]/5 border border-white max-w-sm rotate-2 hover:rotate-0 transition-transform duration-500">
+<span class="font-label text-[11px] uppercase tracking-widest text-outline mb-4 block">Latest from Shohojatri</span>
+<h3 class="serif-italic text-3xl text-[#2e6a4f] mb-6 leading-tight">Finding resonance in silence: A guide to self-reflection.</h3>
+<a class="text-[#7e2844] font-label text-sm font-medium flex items-center gap-2 group" href="#">
+                            Read More 
+                            <span class="group-hover:translate-x-1 transition-transform">→</span>
+</a>
+</div>
+</div>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
+<span class="font-label text-[11px] uppercase tracking-[0.15em] text-outline">Scroll to explore</span>
+<span class="material-symbols-outlined text-secondary animate-bounce">arrow_downward</span>
+</div>
+</section>
+<!-- ABOUT US SECTION -->
+<section class="py-24 px-8 max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-20 items-center">
+<div class="md:col-span-7 space-y-8">
+<div class="flex flex-col gap-2">
+<span class="text-tertiary font-label text-sm uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">reminder</span>
+                        About Us
+                    </span>
+<h2 class="serif-regular text-5xl md:text-6xl text-primary leading-tight">A Companion <br/> <span class="serif-italic">in Your Journey</span></h2>
+</div>
+<div class="space-y-6 max-w-xl">
+<p class="font-light text-[#3a3a3a] leading-relaxed">Shohojatri believes that mental health is not a solitary struggle but a shared human experience. Our approach integrates clinical expertise with deep cultural empathy to create a sanctuary for healing.</p>
+<p class="font-light text-[#3a3a3a] leading-relaxed">Founded by Dr. Debangana Bhattacharya, we bridge the gap between academic psychology and lived experience, ensuring that every individual finds their path to resilience.</p>
+<p class="font-light text-[#3a3a3a] leading-relaxed">Our programs are designed to empower communities, foster awareness, and provide tangible interventions for those navigating the complexities of emotional wellbeing.</p>
+</div>
+<a class="inline-flex items-center gap-2 text-tertiary font-medium group" href="#">
+                    Explore our services <span class="group-hover:translate-x-1 transition-transform">→</span>
+</a>
+</div>
+<div class="md:col-span-5">
+<div class="bg-primary p-12 rounded-lg grid grid-cols-2 gap-8 relative overflow-hidden">
+<div class="space-y-1">
+<span class="serif-regular text-5xl text-white block">500+</span>
+<span class="font-label text-xs text-white/60 uppercase tracking-widest">Lives Touched</span>
+</div>
+<div class="space-y-1">
+<span class="serif-regular text-5xl text-white block">30+</span>
+<span class="font-label text-xs text-white/60 uppercase tracking-widest">Workshops</span>
+</div>
+<div class="space-y-1">
+<span class="serif-regular text-5xl text-white block">5+</span>
+<span class="font-label text-xs text-white/60 uppercase tracking-widest">Years Impact</span>
+</div>
+<div class="space-y-1">
+<span class="serif-regular text-5xl text-white block">12+</span>
+<span class="font-label text-xs text-white/60 uppercase tracking-widest">Programs</span>
+</div>
+<!-- Subtle background logo -->
+<span class="material-symbols-outlined text-[120px] text-white/5 absolute -bottom-4 -right-4">reminder</span>
+</div>
+</div>
+</section>
+<!-- VISION & MISSION SECTION -->
+<section class="bg-primary py-24 px-8">
+<div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-16">
+<div class="md:col-span-5 space-y-8 border-b md:border-b-0 md:border-r border-white/10 pb-16 md:pb-0 md:pr-16">
+<span class="font-label text-xs text-white uppercase tracking-[0.2em] flex items-center gap-2">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">reminder</span>
+                        OUR VISION
+                    </span>
+<h3 class="serif-italic text-4xl text-white leading-tight">To nurture a society where empathy is instinctive and healing is accessible.</h3>
+<p class="serif-italic text-lg text-white/80 leading-relaxed">We envision a world where mental health is prioritized as a fundamental human right, and every individual possesses the tools to navigate their internal landscape with grace.</p>
+</div>
+<div class="md:col-span-7 space-y-10">
+<span class="font-label text-xs text-white uppercase tracking-[0.2em] flex items-center gap-2">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">reminder</span>
+                        OUR MISSION
+                    </span>
+<h3 class="serif-regular text-4xl text-white">Democratizing wellness through research and empathy.</h3>
+<ul class="space-y-6">
+<li class="flex items-start gap-4 text-white/80 font-light">
+<span class="material-symbols-outlined text-sm pt-1 text-white" style="font-variation-settings: 'FILL' 1;">reminder</span>
+                            Advancing mental health literacy through evidence-based outreach programs.
+                        </li>
+<li class="flex items-start gap-4 text-white/80 font-light">
+<span class="material-symbols-outlined text-sm pt-1 text-white" style="font-variation-settings: 'FILL' 1;">reminder</span>
+                            Integrating creative arts as a core therapeutic intervention for diverse groups.
+                        </li>
+<li class="flex items-start gap-4 text-white/80 font-light">
+<span class="material-symbols-outlined text-sm pt-1 text-white" style="font-variation-settings: 'FILL' 1;">reminder</span>
+                            Providing professional psychometric assessments with academic precision.
+                        </li>
+<li class="flex items-start gap-4 text-white/80 font-light">
+<span class="material-symbols-outlined text-sm pt-1 text-white" style="font-variation-settings: 'FILL' 1;">reminder</span>
+                            Fostering community resilience through collaborative workshop models.
+                        </li>
+<li class="flex items-start gap-4 text-white/80 font-light">
+<span class="material-symbols-outlined text-sm pt-1 text-white" style="font-variation-settings: 'FILL' 1;">reminder</span>
+                            Ensuring inclusivity in therapy for marginalized and underserved populations.
+                        </li>
+</ul>
+</div>
+</div>
+</section>
+<!-- SERVICES SECTION -->
+<section class="py-24 px-8 max-w-[1280px] mx-auto">
+<div class="text-center space-y-4 mb-20">
+<span class="text-tertiary font-label text-sm uppercase tracking-widest">What We Do</span>
+<h2 class="serif-regular text-5xl text-primary">Our Services &amp; <br/> <span class="serif-italic">Interventions</span></h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Card 1 -->
+<div class="bg-white p-10 rounded-lg relative overflow-hidden group hover:-translate-y-2 transition-all border-l-0 hover:border-l-[3px] border-secondary transition-all">
+<span class="serif-regular text-8xl text-primary/5 absolute -top-4 right-4 pointer-events-none">01</span>
+<span class="material-symbols-outlined text-4xl text-primary mb-8 block">eco</span>
+<h4 class="serif-regular text-2xl text-primary mb-4">Mental Health Awareness</h4>
+<p class="text-sm font-light leading-relaxed text-[#3a3a3a]">Destigmatizing conversations through educational advocacy and public engagement.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-10 rounded-lg relative overflow-hidden group hover:-translate-y-2 transition-all border-l-0 hover:border-l-[3px] border-secondary transition-all">
+<span class="serif-regular text-8xl text-primary/5 absolute -top-4 right-4 pointer-events-none">02</span>
+<span class="material-symbols-outlined text-4xl text-primary mb-8 block">theater_comedy</span>
+<h4 class="serif-regular text-2xl text-primary mb-4">Creative Arts Therapy</h4>
+<p class="text-sm font-light leading-relaxed text-[#3a3a3a]">Using expression as a bridge to subconscious healing and emotional release.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-10 rounded-lg relative overflow-hidden group hover:-translate-y-2 transition-all border-l-0 hover:border-l-[3px] border-secondary transition-all">
+<span class="serif-regular text-8xl text-primary/5 absolute -top-4 right-4 pointer-events-none">03</span>
+<span class="material-symbols-outlined text-4xl text-primary mb-8 block">assignment</span>
+<h4 class="serif-regular text-2xl text-primary mb-4">Psychometric Assessment</h4>
+<p class="text-sm font-light leading-relaxed text-[#3a3a3a]">Standardized scientific tools to understand cognitive and emotional profiles.</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-white p-10 rounded-lg relative overflow-hidden group hover:-translate-y-2 transition-all border-l-0 hover:border-l-[3px] border-secondary transition-all">
+<span class="serif-regular text-8xl text-primary/5 absolute -top-4 right-4 pointer-events-none">04</span>
+<span class="material-symbols-outlined text-4xl text-primary mb-8 block">groups</span>
+<h4 class="serif-regular text-2xl text-primary mb-4">Community Workshops</h4>
+<p class="text-sm font-light leading-relaxed text-[#3a3a3a]">Collaborative group dynamics designed to foster shared resilience and support.</p>
+</div>
+</div>
+</section>
+<!-- FOUNDER'S DESK -->
+<section class="py-24 px-8 max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-20 items-center">
+<div class="md:col-span-5 relative">
+<div class="relative w-full aspect-square max-w-md mx-auto">
+<div class="absolute inset-0 border-2 border-[#9ae600] rounded-full scale-105"></div>
+<div class="w-full h-full rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Professional portrait of a woman founder in therapeutic setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFiUlCk50JBirgTHRYsvdVjORVSmJkBDOk51KxTEu7L-K7rvSWLo2nmrANUyq8xEMkUvMS42qPWwFbvey7DdRyCAfKQICQuwTWKJsaESRJDDLz6_tlJ42GgYhyRM1q1kv3VPkIb276HKedv_vJg5poe5RaomVC_JwmBEO4owQOUPL9ZJhT5JMDr3W9cTh-cCBDffyNN1TF4-9mLATkTXXCnRxk3IwpmxkG3GSAQfYs9l3C8P0-iUXp6K828WQp7lZVAsCV4j61HnAc"/>
+</div>
+</div>
+</div>
+<div class="md:col-span-7 space-y-8 relative">
+<span class="material-symbols-outlined text-[120px] text-secondary-fixed/30 absolute -top-16 -left-12 pointer-events-none select-none">format_quote</span>
+<div class="flex flex-col gap-2">
+<span class="text-tertiary font-label text-xs uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">reminder</span>
+                        FROM THE FOUNDER'S DESK
+                    </span>
+<blockquote class="serif-italic text-3xl text-primary leading-tight py-4">
+                        "Healing is not a destination, but a courageous way of being in the world. At Shohojatri, we don't just provide therapy; we build sanctuaries where the human spirit can flourish."
+                    </blockquote>
+<div class="pt-6 space-y-2">
+<h4 class="serif-regular text-2xl text-primary">Dr. Debangana Bhattacharya</h4>
+<div class="font-label text-sm text-outline flex flex-col">
+<span>Clinical Psychologist &amp; Researcher</span>
+<span class="text-tertiary">Founder, Shohojatri Initiative</span>
+</div>
+<div class="h-[2px] w-16 bg-secondary mt-4"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- MILESTONES -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-[1280px] mx-auto px-8">
+<div class="text-center mb-20">
+<span class="text-tertiary font-label text-sm uppercase tracking-widest">Our Journey</span>
+<h2 class="serif-regular text-5xl text-primary mt-4">Milestones That <br/> <span class="serif-italic">Shaped Us</span></h2>
+</div>
+<div class="relative pt-12 pb-24">
+<div class="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+<!-- 2020 -->
+<div class="relative text-center group">
+<div class="w-4 h-4 rounded-full bg-primary mx-auto mb-8 relative z-10 group-hover:scale-125 transition-transform"></div>
+<span class="font-label text-xs text-tertiary font-bold mb-2 block">2020</span>
+<p class="serif-regular text-lg text-primary">Shohojatri Founded</p>
+</div>
+<!-- 2021 -->
+<div class="relative text-center group">
+<div class="w-4 h-4 rounded-full bg-primary mx-auto mb-8 relative z-10 group-hover:scale-125 transition-transform"></div>
+<span class="font-label text-xs text-tertiary font-bold mb-2 block">2021</span>
+<p class="serif-regular text-lg text-primary">Workshop Series Launch</p>
+</div>
+<!-- 2022 -->
+<div class="relative text-center group">
+<div class="w-6 h-6 rounded-full bg-tertiary mx-auto mb-[26px] relative z-10 shadow-lg shadow-tertiary/20"></div>
+<span class="font-label text-xs text-tertiary font-bold mb-2 block">2022</span>
+<p class="serif-italic text-lg text-tertiary">Achintya Launch</p>
+</div>
+<!-- 2023 -->
+<div class="relative text-center group">
+<div class="w-4 h-4 rounded-full bg-primary mx-auto mb-8 relative z-10 group-hover:scale-125 transition-transform"></div>
+<span class="font-label text-xs text-tertiary font-bold mb-2 block">2023</span>
+<p class="serif-regular text-lg text-primary">InSPA Membership</p>
+</div>
+<!-- 2024 -->
+<div class="relative text-center group">
+<div class="w-6 h-6 rounded-full bg-secondary mx-auto mb-[26px] relative z-10 shadow-lg shadow-secondary/30 ring-4 ring-secondary/20"></div>
+<span class="font-label text-xs text-tertiary font-bold mb-2 block">2024</span>
+<p class="serif-regular text-lg text-primary">500+ Lives Impacted</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ACHINTYA SPOTLIGHT BANNER -->
+<section class="mx-8 mb-24 max-w-[1280px] lg:mx-auto bg-[#7e2844]/5 border-l-4 border-tertiary rounded-r-lg overflow-hidden">
+<div class="px-12 py-16 flex flex-col md:flex-row justify-between items-center gap-12">
+<div class="space-y-6">
+<span class="font-label text-xs text-tertiary uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">reminder</span>
+                        AN INITIATIVE UNDER SHOHOJATRI
+                    </span>
+<h2 class="serif-italic text-6xl text-tertiary">Achintya</h2>
+<div class="flex flex-wrap gap-3">
+<span class="bg-tertiary/10 text-tertiary px-4 py-1.5 rounded-full text-xs font-label">Artistic Healing</span>
+<span class="bg-tertiary/10 text-tertiary px-4 py-1.5 rounded-full text-xs font-label">Deep Inquiry</span>
+<span class="bg-tertiary/10 text-tertiary px-4 py-1.5 rounded-full text-xs font-label">Soul Resonance</span>
+</div>
+</div>
+<div class="text-right">
+<a class="inline-block bg-tertiary text-white px-8 py-4 rounded-full font-label text-base hover:shadow-xl hover:bg-tertiary-container transition-all" href="#">Explore Achintya →</a>
+</div>
+</div>
+</section>
+<!-- BLOG PREVIEW -->
+<section class="py-24 px-8 max-w-[1280px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16">
+<div class="space-y-4">
+<span class="text-tertiary font-label text-sm uppercase tracking-widest">From Our Blog</span>
+<h2 class="serif-regular text-5xl text-primary">Words That <br/> <span class="serif-italic">Heal</span></h2>
+</div>
+<a class="text-primary font-label text-sm font-medium border-b border-primary/20 pb-1" href="#">View All Posts</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<!-- Blog 1 -->
+<article class="space-y-6 group cursor-pointer">
+<div class="aspect-[4/3] rounded-lg overflow-hidden bg-surface-container relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Soft abstract painting with pastel colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO4KuA9GTK7hGLhp4SyQRtNgzoyJnQGJjf_2S8ZUWNMr2FQVSkaArnPC9sUtgTIMwV5us3MzVziVnabvc6H7iNBbUZZiNaywQdwhO62i2lgVvyMCJxrgR9FYapekJZ8dUbasEdhdVcro5IhvIFNKPkb9xd8CZa7ODyBZXdyV895N0n4ChosH0bwuLzfQxE5NWUSVFz6MPidmLpkc0c4pDjFVXIct3MLJxpXyCWb6P6Ip4rMQm8h21KBPmYaIQzvT4OR3uI8FrlRqXw"/>
+<span class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[10px] uppercase tracking-widest font-bold">Resilience</span>
+</div>
+<h3 class="serif-italic text-2xl text-primary leading-tight group-hover:text-tertiary transition-colors">The art of letting go: Finding peace in transitions.</h3>
+<a class="text-tertiary font-label text-sm flex items-center gap-2 group/link" href="#">Read More <span class="group-hover/link:translate-x-1 transition-transform">→</span></a>
+</article>
+<!-- Blog 2 -->
+<article class="space-y-6 group cursor-pointer">
+<div class="aspect-[4/3] rounded-lg overflow-hidden bg-surface-container relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Calm forest path with sun rays" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABoq49IRdUpvhBxkcb-f26pGm8eKdwVfcS2LDcfUk0DVWccTDDc9NA3Vt_m-hK1RTARV3Xnpq31lKFqgNmos4C--pxdRS57DH-rEf1KD6IGZeKdp4IwnejgiPw6XG2bX0zOrI9dhPXE_gHI1uuzMd2n505pr1R6xTcAcoC3oCOaPGCvHIykbHiljG-iJ0V9kluUa9VApCXW1uL7_T5aW5rFj6W8nto_LK2pdBWGuABffekEjwMF-qTTz8PKFpV4DUjwiuoh5DFbzOB"/>
+<span class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[10px] uppercase tracking-widest font-bold">Mindfulness</span>
+</div>
+<h3 class="serif-italic text-2xl text-primary leading-tight group-hover:text-tertiary transition-colors">Quietening the mind: Why silence is essential today.</h3>
+<a class="text-tertiary font-label text-sm flex items-center gap-2 group/link" href="#">Read More <span class="group-hover/link:translate-x-1 transition-transform">→</span></a>
+</article>
+<!-- Blog 3 -->
+<article class="space-y-6 group cursor-pointer">
+<div class="aspect-[4/3] rounded-lg overflow-hidden bg-surface-container relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Hands holding a clay bowl gently" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWF2QoiHAZNS74-BxZ0deeMwdIIN7sDfCx65QSoNIEWazknmZn2g6tpEGodWuL9USclsjYV8Enpq8A3fEdhsLitz1x2AiQdUbXnT6jlBwJo8T1XH0IiIk8BUW6RHgMITr9wSdB2hmq9xdaZv-6n-NpOctZRCKcfvIw3nSx7abeu36tOFPJkjGaV1zdb_ie4ILiqETEzh5Zoq03O2IvGJqe3fZSwMH6cJRJKpFUvuagLweGOGJNi_0pr5vQGvi9RYTWb8i19GWm6mWk"/>
+<span class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[10px] uppercase tracking-widest font-bold">Community</span>
+</div>
+<h3 class="serif-italic text-2xl text-primary leading-tight group-hover:text-tertiary transition-colors">Collective healing: The power of shared stories.</h3>
+<a class="text-tertiary font-label text-sm flex items-center gap-2 group/link" href="#">Read More <span class="group-hover/link:translate-x-1 transition-transform">→</span></a>
+</article>
+</div>
+</section>
+<!-- MEMBERS SECTION -->
+<section class="py-24 px-8 max-w-[1280px] mx-auto">
+<div class="text-center mb-20 space-y-4">
+<span class="text-tertiary font-label text-sm uppercase tracking-widest">Our People</span>
+<h2 class="serif-regular text-5xl text-primary">The Faces Behind <br/> <span class="serif-italic">Shohojatri</span></h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+<!-- Member 1 -->
+<div class="text-center space-y-4 group">
+<div class="w-24 h-24 rounded-full overflow-hidden mx-auto grayscale group-hover:grayscale-0 transition-all duration-500 ring-2 ring-transparent group-hover:ring-secondary/40 ring-offset-4">
+<img class="w-full h-full object-cover" data-alt="Portrait of woman psychologist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAie6v99h_G6EJeh6zA2-nShVZW0-LoARsqhN8FkqMa8SsSDl3pTmLc-QT02Uf-f1RBhEg_D8fiuQ0mvoKpR_pC-C_mo0dOooJ8-nqa99s_acW_ZPO_406OK4DniL20BBGdj6sV-zQs-HIMc_CvCh9s0cWP6ol8ZXsgsNYKpGxDyEkqYrZ0o6pKlc9tG3T_GO61NVw-SG2SUI3OZU4V76_9EN6ruqJTuHW9chCZeLJkU47tGoMzL8vnT9wxliyxOkjdwTvp4jM_8R_"/>
+</div>
+<div class="space-y-1">
+<h4 class="serif-regular text-xl text-primary">Ananya Sen</h4>
+<p class="font-label text-xs font-light text-outline uppercase tracking-wider">Lead Counselor</p>
+<p class="text-tertiary text-[11px] font-medium tracking-widest uppercase">Clinical Dept</p>
+</div>
+<div class="h-[1px] w-0 group-hover:w-full bg-secondary mx-auto transition-all duration-700"></div>
+</div>
+<!-- Member 2 -->
+<div class="text-center space-y-4 group">
+<div class="w-24 h-24 rounded-full overflow-hidden mx-auto grayscale group-hover:grayscale-0 transition-all duration-500 ring-2 ring-transparent group-hover:ring-secondary/40 ring-offset-4">
+<img class="w-full h-full object-cover" data-alt="Portrait of man researcher" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlPXNnh4PsxMvo4jMTnh1lMj0SjOIZl_VRC8ysxBRoauRI6hXRMnjHmZZEmiRt-jC30C2YSCdgqYuy75vamF6HWpzrXhSck7NTTDpD1ZZyxd4zBX33ModClf889grsa8z64KC3YARiD5iaX0jCQc6hLD5KzSCYnlsjTJym_zJoSgmRaTUYdny9NYLyCMMgITy4dHqw-UNuNG6DKp1Xq10qVR91X4UmDvH1Nwbr6DdXDNvE9n6o6goEzsVDNhzjBuh2x_MMdlG1FMNY"/>
+</div>
+<div class="space-y-1">
+<h4 class="serif-regular text-xl text-primary">Rahul Das</h4>
+<p class="font-label text-xs font-light text-outline uppercase tracking-wider">Research Associate</p>
+<p class="text-tertiary text-[11px] font-medium tracking-widest uppercase">Academia</p>
+</div>
+<div class="h-[1px] w-0 group-hover:w-full bg-secondary mx-auto transition-all duration-700"></div>
+</div>
+<!-- Member 3 -->
+<div class="text-center space-y-4 group">
+<div class="w-24 h-24 rounded-full overflow-hidden mx-auto grayscale group-hover:grayscale-0 transition-all duration-500 ring-2 ring-transparent group-hover:ring-secondary/40 ring-offset-4">
+<img class="w-full h-full object-cover" data-alt="Portrait of woman therapist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGPFh-kReAow5G2-kOH4kq-KyQ-a0Kp-KpjAFVeh8Lr1U9HqAAcQIeYQMlpcehuydONSzlAn7CfZPpI389YeS90mmudkrMvPFjn0AgTDepHknrGnsm1iJmLf9aIkWMyK2fUexKRsgkH8y7UBp5AErRJbADCkPfvKgtPv1B3coQ9SYH8DK4_ddmAJTl5qM3S3-T7dCvPBy1FSozBWQ8sN4sO5JmYivJSRGVjBXDNF-qWnULPZtJavpU9BkUA7cXdokxSyAAEj6zIIfS"/>
+</div>
+<div class="space-y-1">
+<h4 class="serif-regular text-xl text-primary">Meghna Roy</h4>
+<p class="font-label text-xs font-light text-outline uppercase tracking-wider">Arts Therapist</p>
+<p class="text-tertiary text-[11px] font-medium tracking-widest uppercase">Creative Initiatives</p>
+</div>
+<div class="h-[1px] w-0 group-hover:w-full bg-secondary mx-auto transition-all duration-700"></div>
+</div>
+<!-- Member 4 -->
+<div class="text-center space-y-4 group">
+<div class="w-24 h-24 rounded-full overflow-hidden mx-auto grayscale group-hover:grayscale-0 transition-all duration-500 ring-2 ring-transparent group-hover:ring-secondary/40 ring-offset-4">
+<img class="w-full h-full object-cover" data-alt="Portrait of woman community lead" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUgOEzmf4pLIYHqqd-o2GH44nTCwYdaDGyZExgpnDTVapVINgwKtZjg2ym-r4bA1Nm3sN8hMsQqWpDaXXEJNrOXVZpSn3TT8anayslfsyE0e_glxGCnHPYLqXh4Om9qFKZZrsfYOwmHeRwTk7gX7bqxk5UTDngnwzc1VJh-FqKrkW3gFSK_jfanBi9VGMQ96VucE_bx3dBpfWgMU4_CwoagbI4oy867vA3j8NPIw4WSivJOxT8AG9VDiroIt3zDpKjDoFayeHaiqFf"/>
+</div>
+<div class="space-y-1">
+<h4 class="serif-regular text-xl text-primary">Soma Dutta</h4>
+<p class="font-label text-xs font-light text-outline uppercase tracking-wider">Community Outreach</p>
+<p class="text-tertiary text-[11px] font-medium tracking-widest uppercase">Impact Programs</p>
+</div>
+<div class="h-[1px] w-0 group-hover:w-full bg-secondary mx-auto transition-all duration-700"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="pt-20 pb-10 w-full relative overflow-hidden bg-[#115238] dark:bg-stone-950 text-white font-sans Neue Haas Grotesk text-sm">
+<div class="text-4xl font-serif text-white/10 uppercase absolute top-0 left-0 leading-none p-8 select-none pointer-events-none">
+            SHOHOJATRI
+        </div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 max-w-[1280px] mx-auto w-full relative z-10">
+<div class="space-y-6">
+<div class="font-serif text-2xl font-bold text-white mb-4">SHOHOJATRI</div>
+<p class="text-white/70 leading-relaxed max-w-[240px]">A dedicated initiative toward emotional empowerment, resilience, and collective healing.</p>
+</div>
+<div class="space-y-4">
+<h5 class="text-secondary-fixed font-bold uppercase tracking-widest text-xs mb-6">Navigation</h5>
+<ul class="space-y-3">
+<li><a class="text-white/80 hover:text-white transition-opacity" href="#">Home</a></li>
+<li><a class="text-white/80 hover:text-white transition-opacity" href="#">Achintya</a></li>
+<li><a class="text-white/80 hover:text-white transition-opacity" href="#">Gallery</a></li>
+<li><a class="text-white/80 hover:text-white transition-opacity" href="#">Blog</a></li>
+<li><a class="text-white/80 hover:text-white transition-opacity" href="#">Contact</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="text-secondary-fixed font-bold uppercase tracking-widest text-xs mb-6">Contact Us</h5>
+<ul class="space-y-3">
+<li class="flex items-center gap-2 text-white/80">
+<span class="material-symbols-outlined text-sm">mail</span>
+                        hello@shohojatri.org
+                    </li>
+<li class="flex items-center gap-2 text-white/80">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                        Kolkata, West Bengal, India
+                    </li>
+<li class="flex items-center gap-2 text-white/80">
+<span class="material-symbols-outlined text-sm">call</span>
+                        +91 90000 00000
+                    </li>
+</ul>
+</div>
+<div class="space-y-6">
+<h5 class="text-secondary-fixed font-bold uppercase tracking-widest text-xs mb-6">Connect</h5>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all" href="#">
+<span class="material-symbols-outlined">favorite</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+</div>
+<p class="text-[10px] text-white/40 uppercase tracking-[0.2em]">Psychosocial Welfare NGO</p>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto px-8 mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4">
+<p class="text-white/50 text-[12px]">© 2025 Shohojatri. Designed with care for mental health awareness.</p>
+<div class="flex gap-6 text-[12px] text-white/50">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Use</a>
+</div>
+</div>
+</footer>
+</body></html>

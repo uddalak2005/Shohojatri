@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        /* Manually mapping the requested premium fonts for the specific editorial feel */
+        @import url('https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro');
+        @import url('https://fonts.cdnfonts.com/css/apple-garamond');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fbf9f8;
+            color: #1b1c1c;
+        }
+
+        .font-mercury { font-family: 'Newsreader', serif; } /* Proxy for Mercury Display */
+        .font-apple { font-family: 'Apple Garamond', serif; }
+        .font-neue { font-family: 'Neue Haas Grotesk Display Pro', 'Inter', sans-serif; }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .tonal-shift { background-color: #fbf9f8; }
+        
+        /* Custom Ribbon Shape */
+        .ribbon-xs {
+            width: 12px;
+            height: 18px;
+            background-color: #115238;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 85%, 0% 100%);
+            display: inline-block;
+        }
+
+        .ribbon-lime { background-color: #9ae600; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "on-tertiary-container": "#ffcdd7",
+                "primary-container": "#2e6a4f",
+                "inverse-surface": "#303030",
+                "surface-container": "#f0eded",
+                "on-error-container": "#93000a",
+                "surface-container-high": "#eae8e7",
+                "error-container": "#ffdad6",
+                "tertiary-fixed-dim": "#ffb1c3",
+                "surface": "#fbf9f8",
+                "on-primary-container": "#a9e7c5",
+                "inverse-on-surface": "#f3f0f0",
+                "secondary": "#446900",
+                "on-primary-fixed": "#002113",
+                "on-tertiary-fixed-variant": "#7d2743",
+                "outline": "#707973",
+                "secondary-fixed-dim": "#92db00",
+                "surface-tint": "#2d694e",
+                "primary": "#115238",
+                "outline-variant": "#bfc9c1",
+                "inverse-primary": "#96d4b3",
+                "surface-container-low": "#f6f3f2",
+                "surface-dim": "#dcd9d9",
+                "on-surface": "#1b1c1c",
+                "on-primary-fixed-variant": "#105138",
+                "tertiary-container": "#9c405b",
+                "secondary-container": "#abf926",
+                "surface-container-lowest": "#ffffff",
+                "primary-fixed-dim": "#96d4b3",
+                "on-tertiary": "#ffffff",
+                "secondary-fixed": "#abf926",
+                "primary-fixed": "#b1f0ce",
+                "surface-bright": "#fbf9f8",
+                "on-background": "#1b1c1c",
+                "on-secondary-fixed-variant": "#324f00",
+                "on-secondary-container": "#486f00",
+                "on-primary": "#ffffff",
+                "on-tertiary-fixed": "#3f0019",
+                "on-secondary": "#ffffff",
+                "tertiary": "#7e2844",
+                "on-surface-variant": "#404943",
+                "on-secondary-fixed": "#111f00",
+                "background": "#fbf9f8",
+                "surface-variant": "#e4e2e1",
+                "on-error": "#ffffff",
+                "error": "#ba1a1a",
+                "tertiary-fixed": "#ffd9e0",
+                "surface-container-highest": "#e4e2e1"
+              },
+              fontFamily: {
+                "headline": ["Newsreader", "serif"],
+                "body": ["Inter", "sans-serif"],
+                "label": ["Inter", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-surface selection:bg-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full h-[72px] z-50 bg-[#fbf9f8]/80 dark:bg-emerald-950/80 backdrop-blur-xl flex justify-between items-center px-12 w-full mx-auto max-w-[1440px]">
+<div class="flex items-center gap-3">
+<div class="ribbon-xs"></div>
+<span class="font-['Mercury_Display'] italic text-2xl text-[#115238] dark:text-emerald-400">Shohojatri</span>
+</div>
+<div class="hidden md:flex items-center gap-10 font-['Neue_Haas_Grotesk'] tracking-tight text-sm uppercase">
+<a class="text-[#115238] dark:text-[#9ae600] font-bold border-b-2 border-[#9ae600] hover:text-[#9ae600] transition-colors duration-300" href="#">Gallery</a>
+<a class="text-[#115238]/70 dark:text-emerald-100/70 hover:text-[#9ae600] transition-colors duration-300" href="#">Welfare</a>
+<a class="text-[#115238]/70 dark:text-emerald-100/70 hover:text-[#9ae600] transition-colors duration-300" href="#">Research</a>
+<a class="text-[#115238]/70 dark:text-emerald-100/70 hover:text-[#9ae600] transition-colors duration-300" href="#">About</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-neue text-xs uppercase tracking-widest hover:shadow-[0_0_15px_#9ae600] transition-all active:scale-95 duration-200">
+            Support Us
+        </button>
+</nav>
+<main class="pt-[72px]">
+<!-- Hero Section -->
+<section class="h-[320px] bg-[#f8fdf8] flex items-center px-12 relative overflow-hidden">
+<div class="max-w-[1280px] mx-auto w-full z-10">
+<div class="flex items-center gap-4 mb-4">
+<div class="ribbon-xs"></div>
+<span class="font-neue text-xs tracking-[0.2em] uppercase text-primary/60">The Visual Archive</span>
+</div>
+<h1 class="font-mercury text-[96px] leading-[0.9] text-primary tracking-tighter">
+                    Moments of <br/> <span class="italic font-light">Togetherness</span>
+</h1>
+<p class="font-neue font-light text-[18px] text-primary/80 mt-6 max-w-xl">
+                    Every image tells a story of healing, community, and growth.
+                </p>
+</div>
+<!-- Decorative background element -->
+<div class="absolute -right-20 -bottom-20 w-96 h-96 bg-secondary-container/10 rounded-full blur-[100px]"></div>
+</section>
+<!-- Sticky Filter Bar -->
+<div class="sticky top-[72px] z-40 bg-surface border-b border-outline-variant/10 py-6 px-12">
+<div class="max-w-[1280px] mx-auto flex flex-wrap gap-3 items-center">
+<button class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-full flex items-center gap-2 text-sm font-neue font-medium transition-all hover:shadow-[0_0_10px_#9ae600]">
+<div class="ribbon-xs ribbon-lime scale-50"></div> All
+                </button>
+<button class="bg-surface-container-low text-primary/70 px-6 py-2.5 rounded-full flex items-center gap-2 text-sm font-neue font-medium transition-all hover:bg-surface-container-high hover:shadow-[0_0_10px_#9ae600]">
+<div class="ribbon-xs scale-50 opacity-40"></div> Workshops
+                </button>
+<button class="bg-surface-container-low text-primary/70 px-6 py-2.5 rounded-full flex items-center gap-2 text-sm font-neue font-medium transition-all hover:bg-surface-container-high hover:shadow-[0_0_10px_#9ae600]">
+<div class="ribbon-xs scale-50 opacity-40"></div> Events
+                </button>
+<button class="bg-surface-container-low text-primary/70 px-6 py-2.5 rounded-full flex items-center gap-2 text-sm font-neue font-medium transition-all hover:bg-surface-container-high hover:shadow-[0_0_10px_#9ae600]">
+<div class="ribbon-xs scale-50 opacity-40"></div> Achintya
+                </button>
+<button class="bg-surface-container-low text-primary/70 px-6 py-2.5 rounded-full flex items-center gap-2 text-sm font-neue font-medium transition-all hover:bg-surface-container-high hover:shadow-[0_0_10px_#9ae600]">
+<div class="ribbon-xs scale-50 opacity-40"></div> Community
+                </button>
+<button class="bg-surface-container-low text-primary/70 px-6 py-2.5 rounded-full flex items-center gap-2 text-sm font-neue font-medium transition-all hover:bg-surface-container-high hover:shadow-[0_0_10px_#9ae600]">
+<div class="ribbon-xs scale-50 opacity-40"></div> Outreach
+                </button>
+</div>
+</div>
+<!-- Masonry Grid -->
+<section class="px-12 py-24 max-w-[1280px] mx-auto">
+<div class="columns-1 md:columns-2 lg:columns-3 gap-5 space-y-5">
+<!-- Card 1 -->
+<div class="group relative overflow-hidden rounded-[20px] bg-surface-container-low break-inside-avoid shadow-sm cursor-pointer">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" data-alt="People laughing together in a community circle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-tr7tlaXQ1eolJPwrQOwbVfWUKWpPN0MW5O_Y_axgsTTwJJI4_RjguvNGHJeMByZj4FPjpUO-VJCvfQ3dM9DssJdwHutxDhGUIEl31E1NvP0-DD6jg90BuGTb_IhfRftPDIeZ6t2F7jYuMWeXXvg3XPSFDqf4MIaxc3OXXfpAVHVIJzV2g0DwIowveQ0P8sXADFttdR35r5GRjWoz8MDO1d2vwD5YgHf5PPHpR1Ta2-B-GNqm6Jn-iVHRd-qMp5LvOyHOZzg27av2"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+<span class="text-secondary-fixed text-xs font-neue uppercase tracking-widest mb-1">Community</span>
+<h3 class="font-apple italic text-2xl text-white">The warmth of shared circles</h3>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative overflow-hidden rounded-[20px] bg-surface-container-low break-inside-avoid shadow-sm cursor-pointer">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" data-alt="Calm individuals practicing yoga in natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkpAH2IOa0N3KE3O_FcYqtlzxEF0yaNWJUBcohBuzhaO_mt_xebwsom1BrbVOCehyTGalEHW4IPQM9MWpDdIWz4qOmMjZVJt2oQblUh26ATroWE96dQFlIN9KwuWEBD0gLtHPi4IV4pgJcuh7nHJvxd-LqssocqbPJoi5aCvtznMOod4rMe4b1nH5AzMp5Pc32-H_Lb9KUYo5vhhUB9V03Cg9tG8DCyYQAYZT6JyTCzPt4V4pGX5tH4yakYlepPhwOQ0iPxvg6-Qyc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+<span class="text-secondary-fixed text-xs font-neue uppercase tracking-widest mb-1">Workshops</span>
+<h3 class="font-apple italic text-2xl text-white">Morning stillness in Achintya</h3>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative overflow-hidden rounded-[20px] bg-surface-container-low break-inside-avoid shadow-sm cursor-pointer">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" data-alt="Diverse group of friends smiling at camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnobz_GLUyKHcvN_Z5dllRG6iZzaeGTphOtPLE_Pd9tHO1IpWla55k0tvf4tF7Q06kWYKnIjYZ4T-95jgEuRnoPO7Xo8MQeyQRCtJixjlU4eyDCndxsZSv13wkD3yKMfT6G0y5KXdeo5no0zL2jn8aUlzxImKR1PJdTOKb8RnN0yOOptF9dZVpacRQ1gAHRUOvcZbkphVzC6t9obC1_DnJLG__sSUbmHfqygInjf5HsC4z7LlGCXPdp_kW5b5ud-eGlyg_L03zoI8M"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+<span class="text-secondary-fixed text-xs font-neue uppercase tracking-widest mb-1">Outreach</span>
+<h3 class="font-apple italic text-2xl text-white">Connections that cross borders</h3>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group relative overflow-hidden rounded-[20px] bg-surface-container-low break-inside-avoid shadow-sm cursor-pointer">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" data-alt="Artistic therapeutic session with paints" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3sAyIlc9Q39OGUnDUoi7dRFMSxt_URxeNzD3nP6I7dWbOUGen3byzyEqMmV2rWkiJ2p5wYFHJ-C4EemrjEUnppf9qkQ9IMjwiZDGY3rHbyV0qc00eyh6prriSnKgEXVvls_dbCS1PHYfRmEhKHdmu7KWqjlpp7tRk0nJdg1k9q1gz6BhBM617I9OF0c8xejWM_F6ZEpuAmpI6i5BINwDgMpeSUvYmBR5HvCidL1x6RQ99-natjd4OD75bXZ0BsbGPofMzHTVu359x"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+<span class="text-secondary-fixed text-xs font-neue uppercase tracking-widest mb-1">Workshops</span>
+<h3 class="font-apple italic text-2xl text-white">Expression through colors</h3>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="group relative overflow-hidden rounded-[20px] bg-surface-container-low break-inside-avoid shadow-sm cursor-pointer">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" data-alt="Gathering around a large dinner table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCeNHHYmqtf3WVnM1wrlsdz8R2sUtVM1W6wU0glZnmIl_ykejTJesoVu0vlHO4zaBSRWlRY01gRaTevH2hzaaLIZg1qLTN7UkuLbOh8Bt6AuWYgwhmnFFplV3LP8qJv9I7QC0BpyXRas352clCQiJx7TftQUDbOQeMDihpN9CJRGmT53GfqSrdQlFhOVUepbmvJ3fNjuRixdGmkxNloiss4qOvQY3EV_ZHPITV-l_8T_qmJMrYDCUA11RGDCcZS3UW4kYVuqGmUC11"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+<span class="text-secondary-fixed text-xs font-neue uppercase tracking-widest mb-1">Events</span>
+<h3 class="font-apple italic text-2xl text-white">The Annual Sanctuary Feast</h3>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="group relative overflow-hidden rounded-[20px] bg-surface-container-low break-inside-avoid shadow-sm cursor-pointer">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" data-alt="Academic seminar with engaged listeners" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDadpdakmdh2pQvgdgHhIsFkoMocJBs_GeA4TWjabDPHGDpHiA6NXobidhJEnTnUbd-DBCiIuHT2yCpvcpKgHc9m_er8pqigkdYb2I1Hr04aIJ2HJ6taEebzXdjxuaHf0FA73zJYUeWjj7uvG6O5Yrdf55oJl8olqyF1pKDI5JVolUfG08ERr6TFU86mPbOAGeFUCBBDPhjLyWRteJDk6UMHusHOSMbnKYZTBMF202_y52vg0SomJnAUGqoiWO_LVxkp_I2V53xkgfH"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+<span class="text-secondary-fixed text-xs font-neue uppercase tracking-widest mb-1">Achintya</span>
+<h3 class="font-apple italic text-2xl text-white">Dialogue on deep empathy</h3>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-24 flex items-center justify-center gap-6 font-neue text-sm tracking-widest text-primary/60">
+<button class="hover:text-primary transition-colors">← PREV</button>
+<div class="flex items-center gap-4">
+<span class="w-10 h-10 rounded-full bg-primary-container text-white flex items-center justify-center font-bold">1</span>
+<span class="hover:text-primary cursor-pointer transition-colors">2</span>
+<span class="hover:text-primary cursor-pointer transition-colors">3</span>
+</div>
+<button class="hover:text-primary transition-colors">NEXT →</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-24 px-12 bg-[#115238] dark:bg-emerald-950 relative overflow-hidden">
+<div class="grid grid-cols-4 gap-12 w-full max-w-[1280px] mx-auto z-10 relative">
+<div class="col-span-4 lg:col-span-1">
+<div class="flex items-center gap-3 mb-6">
+<div class="ribbon-xs ribbon-lime"></div>
+<span class="font-mercury italic text-2xl text-[#fbf9f8]">Shohojatri</span>
+</div>
+<p class="font-apple text-lg leading-relaxed text-[#fbf9f8]/80">
+                    A sanctuary for psychosocial welfare, bridging academic research and human compassion.
+                </p>
+</div>
+<div class="col-span-2 lg:col-span-1">
+<h4 class="font-neue text-xs tracking-widest uppercase text-secondary-fixed mb-6">Quick Links</h4>
+<div class="flex flex-col gap-4 font-neue text-sm text-[#fbf9f8]/80">
+<a class="hover:text-[#9ae600] transition-all underline-offset-4" href="#">Privacy Policy</a>
+<a class="hover:text-[#9ae600] transition-all underline-offset-4" href="#">Annual Report</a>
+<a class="hover:text-[#9ae600] transition-all underline-offset-4" href="#">Careers</a>
+</div>
+</div>
+<div class="col-span-2 lg:col-span-1">
+<h4 class="font-neue text-xs tracking-widest uppercase text-secondary-fixed mb-6">Connect</h4>
+<div class="flex flex-col gap-4 font-neue text-sm text-[#fbf9f8]/80">
+<a class="hover:text-[#9ae600] transition-all underline-offset-4" href="#">Instagram</a>
+<a class="hover:text-[#9ae600] transition-all underline-offset-4" href="#">LinkedIn</a>
+<a class="hover:text-[#9ae600] transition-all underline-offset-4" href="#">Contact Us</a>
+</div>
+</div>
+<div class="col-span-4 lg:col-span-1">
+<h4 class="font-neue text-xs tracking-widest uppercase text-secondary-fixed mb-6">Our Location</h4>
+<p class="font-apple text-lg text-[#fbf9f8]/80">
+                    42/A Serene Avenue,<br/>
+                    Peaceful Enclave, Dhaka.
+                </p>
+</div>
+</div>
+<div class="w-full max-w-[1280px] mx-auto mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="font-neue text-[10px] uppercase tracking-[0.2em] text-[#fbf9f8]/50">© 2024 Shohojatri Psychosocial Welfare. All rights reserved.</p>
+<div class="flex gap-8">
+<span class="material-symbols-outlined text-[#fbf9f8]/40 hover:text-secondary-fixed cursor-pointer transition-colors">eco</span>
+<span class="material-symbols-outlined text-[#fbf9f8]/40 hover:text-secondary-fixed cursor-pointer transition-colors">diversity_3</span>
+<span class="material-symbols-outlined text-[#fbf9f8]/40 hover:text-secondary-fixed cursor-pointer transition-colors">volunteer_activism</span>
+</div>
+</div>
+<!-- Watermark Large Text -->
+<div class="font-['Mercury_Display'] text-[18vw] font-bold opacity-[0.03] text-[#fbf9f8] absolute right-[-5%] bottom-[-5%] pointer-events-none select-none tracking-tighter">
+            SHOHOJATRI
+        </div>
+</footer>
+</body></html>

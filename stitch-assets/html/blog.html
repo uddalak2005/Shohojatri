@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        /* Custom Font Mappings to match Design System Hierarchy */
+        .font-mercury { font-family: 'Newsreader', serif; font-optical-sizing: auto; }
+        .font-neue { font-family: 'Inter', sans-serif; }
+        .font-garamond { font-family: 'Newsreader', serif; font-style: italic; } /* Fallback for Apple Garamond */
+
+        body {
+            background-color: #fbf9f8;
+            color: #1b1c1c;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .ribbon-xs {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #115238;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+        }
+
+        .ribbon-xs::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background-color: #9ae600;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2L4 5v11c0 5.25 3.41 10.19 8 12 4.59-1.81 8-6.75 8-12V5l-8-3z'/%3E%3C/svg%3E") no-repeat center;
+            -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2L4 5v11c0 5.25 3.41 10.19 8 12 4.59-1.81 8-6.75 8-12V5l-8-3z'/%3E%3C/svg%3E") no-repeat center;
+        }
+
+        .blog-card-shadow {
+            box-shadow: 0 4px 32px rgba(46, 106, 79, 0.07);
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#115238",
+                        "secondary": "#9ae600",
+                        "tertiary": "#7e2844",
+                        "surface": "#fbf9f8",
+                        "on-surface": "#1b1c1c",
+                        "primary-container": "#2e6a4f",
+                        "surface-container-low": "#f6f3f2",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "rgba(191, 201, 193, 0.15)",
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-neue">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full h-[72px] z-50 bg-[#fbf9f8]/80 dark:bg-stone-900/80 backdrop-blur-xl transition-colors duration-300">
+<div class="flex justify-between items-center px-12 w-full max-w-[1440px] mx-auto h-full">
+<div class="font-['Mercury_Text'] italic text-2xl text-[#115238] dark:text-stone-100">Shohojatri</div>
+<div class="hidden md:flex items-center gap-8 font-['Neue_Haas_Grotesk'] tracking-tight text-sm uppercase font-semibold">
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#115238] hover:opacity-80 transition-opacity" href="#">Our Mission</a>
+<a class="text-[#115238] dark:text-[#9ae600] border-b-2 border-[#9ae600] pb-1 hover:opacity-80 transition-opacity" href="#">Words That Heal</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#115238] hover:opacity-80 transition-opacity" href="#">Research</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#115238] hover:opacity-80 transition-opacity" href="#">Sanctuary</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#115238] hover:opacity-80 transition-opacity" href="#">Support Us</a>
+</div>
+<button class="bg-[#115238] text-white px-6 py-2 rounded-full font-semibold text-sm hover:opacity-80 transition-opacity active:scale-95 duration-200">
+                Get Help
+            </button>
+</div>
+</nav>
+<main class="pt-[72px]">
+<!-- Hero Section -->
+<section class="h-[320px] flex flex-col justify-center px-12 max-w-[1440px] mx-auto">
+<span class="ribbon-xs mb-4">SHOHOJATRI JOURNAL</span>
+<h1 class="font-mercury italic text-6xl text-primary leading-tight mb-2">Words That Heal</h1>
+<p class="text-[18px] text-stone-600 font-light max-w-2xl">
+                Perspectives on mental health, community, and the art of healing together.
+            </p>
+</section>
+<!-- Content Area -->
+<section class="px-12 max-w-[1440px] mx-auto pb-24">
+<!-- Featured Post -->
+<div class="w-full h-[420px] flex mb-24 rounded-[24px] overflow-hidden blog-card-shadow bg-white">
+<div class="w-[55%] h-full relative">
+<img alt="Featured Article" class="w-full h-full object-cover" data-alt="Calm serene lake with morning mist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhTfwlZsFZA79z0YzdeUNW_l2gkTgnwRl1nkPbsKNLwzUp5ABA40vYX7mJ2bATzoDZ3EH2L8qpm_3X9-lTuLkCIl26Iw5Y4hHZfSEou-axGvRZ5Odlur8NJgfXWYfGvo35X1awXAc1SgnpeN3dwpn3b_qhc0UOjVYXb4x8MAN2NCuzqG-6Pq-Rp111akXD6sIVRQ5hDHtjuZRgQTDNnmTq_YorQEJlg75FnaR2_NfHTWpzNvmW3716ZqJFmARRNnhIdw0D51d8xn6v"/>
+</div>
+<div class="w-[45%] p-12 flex flex-col justify-center bg-white">
+<span class="inline-block bg-secondary px-3 py-1 rounded-full text-primary-container text-xs font-bold w-max mb-6">FEATURED</span>
+<h2 class="font-mercury italic text-[36px] text-primary-container leading-tight mb-4">The Quiet Strength of Shared Silence</h2>
+<p class="text-stone-600 font-light text-[16px] leading-relaxed mb-6 line-clamp-3">
+                        In our hyper-connected world, the most profound forms of healing often happen in the quiet moments between spoken words. Discover how communal stillness can rebuild neural pathways of trust...
+                    </p>
+<div class="flex items-center justify-between mt-auto">
+<div class="text-[12px] text-stone-400 font-neue">
+<span class="font-semibold text-stone-600">Dr. Aranya Sen</span> • Oct 24, 2024
+                        </div>
+<a class="text-[#C25E7A] font-semibold text-sm hover:translate-x-1 transition-transform inline-flex items-center gap-2" href="#">
+                            Read Article <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-16">
+<!-- Blog Grid -->
+<div class="lg:w-[70%] space-y-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Blog Card 1 -->
+<div class="bg-white rounded-[24px] p-9 blog-card-shadow border border-primary-container/5 hover:-translate-y-2 transition-transform duration-300">
+<img alt="Meditation" class="w-full h-[240px] object-cover rounded-[16px] mb-6" data-alt="Minimalist Zen garden with raked sand" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_VYBq1QHvrEROlagGYKlWAMJgmguA_cjAFx4GlPGFDGaAZVFUcumZ8Vnf74Z0PT0yWvtptvyURnIU4FSpI-Th8DKUNRdB8Ik45j3rTcVCSE1BC8oZpRwNZVoknmmrFeZGiBnBQ3dnBy_G5s_yFSc2kM1MP5-1Uq656tfsDm5PWIu8JHTg7YrYRxX5DJz57MGQqIlvCRY7LVdZQnkIojzjFmyIDzqCYFtpsG756n2_UQY1hdUNlTF59ctH3EolKIvEaSZCeiQl0lkF"/>
+<span class="inline-block bg-secondary px-3 py-1 rounded-full text-primary-container text-[10px] font-bold mb-4 uppercase tracking-wider">Research &amp; Insights</span>
+<h3 class="font-garamond text-[24px] text-primary-container leading-snug mb-3">Breath as a Bridge: Neurobiology of Care</h3>
+<p class="text-stone-600 font-light text-[14px] leading-relaxed mb-6 line-clamp-2">Exploring the physiological shifts that occur when we practice collective mindfulness in crisis centers.</p>
+<div class="flex items-center gap-3 pt-4 border-t border-stone-100">
+<div class="w-8 h-8 rounded-full bg-stone-200 overflow-hidden">
+<img alt="Author" data-alt="Professional portrait of a woman counselor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeoMw556btYMjnXg0c60GYDnKWfsM4L4UwmIh6XFOCY1-a--e-dbrXExb9Vj6YNTId6hIYwOFoaFzK2JudcKk6VobtkIraJhZ75qiOWL8c1w8h0aIzJ7-V143cuOgWOVz5Uznz_9RAfo0mhquBG8Fle79WPKYIl0S1wAQIRJCPnUDA5y9TZfr3yuMm2jpe7lIjVPwH3Xv5RAWBc0UenT1bmMdSbjEDWD_NCyruHSu7G770ZZeubkyK-_nXmtxsqwRwF07wZbrVSTF2"/>
+</div>
+<div class="text-[12px]">
+<p class="font-semibold text-stone-800">Maya Ray</p>
+<p class="text-stone-400">Oct 20, 2024</p>
+</div>
+<a class="ml-auto text-[#C25E7A] text-sm hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Blog Card 2 -->
+<div class="bg-white rounded-[24px] p-9 blog-card-shadow border border-primary-container/5 hover:-translate-y-2 transition-transform duration-300">
+<img alt="Journaling" class="w-full h-[240px] object-cover rounded-[16px] mb-6" data-alt="Open leather-bound journal on wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDItiFUdFQIWohYtBfnnL1RMrZ-hTrPhGqVfgk2lFJ0PS5CnWIAVjbdlP2VyWYvbyKzfeiOkKxoPA2DxU4DEyv-piVDp1ierEV_Dw4y-0ZXjUg2gYRwKojW8FzFYmEVyHTIh-iRjeRnrh3ppgos5KCb6d_0lZh23_3PSRnrVkoHkLJ5XAal7WiOGGV2ooxE86bxBag4nVvw3vKQwEKjJnvYpCPicTsyoH1Fj8SpELEmI1Af_Pfd5wMChgG8-5JZqjpiiMK9vI-uGpkb"/>
+<span class="inline-block bg-secondary px-3 py-1 rounded-full text-primary-container text-[10px] font-bold mb-4 uppercase tracking-wider">Creative Arts</span>
+<h3 class="font-garamond text-[24px] text-primary-container leading-snug mb-3">Ink and Empathy: Writing Your Way Home</h3>
+<p class="text-stone-600 font-light text-[14px] leading-relaxed mb-6 line-clamp-2">How creative writing workshops are helping trauma survivors reclaim their personal narratives.</p>
+<div class="flex items-center gap-3 pt-4 border-t border-stone-100">
+<div class="w-8 h-8 rounded-full bg-stone-200 overflow-hidden">
+<img alt="Author" data-alt="Portrait of a male creative director" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW2JrUjmu3W2Sc-_aZ0DILyYK3fjgZ_u0u5IFX6AnXvQuY_RWYP8Q8Rjq3dib9bSIonDyRg4Xs-HCsr1BFpBPHGWV6oBS6Gceq696uEy6l4maU64TjCsv3xK44LrJvQTqcquWm9m3q9XfxSwJOBlmCnqfRIu8vY4z-N9r59vXFdCR_HmoeOronIxbbDQu3iAwZtIXcrg-qXUcG_A8tXkXgeH12ipc0z2rEyURRFYKGL6L19JhRX6tTpfnm6MqC46HTac2JHaKQ18tJ"/>
+</div>
+<div class="text-[12px]">
+<p class="font-semibold text-stone-800">Julian Moss</p>
+<p class="text-stone-400">Oct 18, 2024</p>
+</div>
+<a class="ml-auto text-[#C25E7A] text-sm hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Blog Card 3 -->
+<div class="bg-white rounded-[24px] p-9 blog-card-shadow border border-primary-container/5 hover:-translate-y-2 transition-transform duration-300">
+<img alt="Community" class="w-full h-[240px] object-cover rounded-[16px] mb-6" data-alt="Group of people holding hands in a circle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD67NfMEK7kpZkKj7eG_m-8MyHdrkBP03AcUpHC0Da7MFYUI5RPGpJLmf3hy1p8nhi5aedfPscuL6WOvOC95-q9qWfttiqPapNJY_zSxrrKO4wM-q0hoaRSVwgLUji8n25O9Qi_SPZkL_gX00WG5AEvTqWsa-Nq3H4k5TrX1W2bO2bV-Icc2cvc5NFxeoH-ZrbdtILkEIZRQW3Rs5n9OGDvGvd198GXf07raV7cCuuY8ApG9MfhFDGuCbaUQkHGIJ-XpYl44x0tnXQ6"/>
+<span class="inline-block bg-secondary px-3 py-1 rounded-full text-primary-container text-[10px] font-bold mb-4 uppercase tracking-wider">Community Stories</span>
+<h3 class="font-garamond text-[24px] text-primary-container leading-snug mb-3">Building the Collective Safety Net</h3>
+<p class="text-stone-600 font-light text-[14px] leading-relaxed mb-6 line-clamp-2">A look into our local neighborhood initiatives that provide 24/7 peer support systems.</p>
+<div class="flex items-center gap-3 pt-4 border-t border-stone-100">
+<div class="w-8 h-8 rounded-full bg-stone-200 overflow-hidden">
+<img alt="Author" data-alt="Close up of a smiling woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8g6UgnixoGfoApE6vwHVeWaOcHRFghfrdumiEidxgNf-33yhZ3acIDNcW7uT0eYPVdRTOrgbBpYm419DITs_M2cK1EDUAggFbmohhJsGppepTsphwdDYYFmeex4gPiiOKDs3cfT1Pb6e6U5a6P1LoBADdyo3LdZea_Rm_CRlESaYjDF0GrRsVnC6cMSgtM_OpmvxEjcmipn3gTrct19VA_ztmXSfagTy73WrXNa4g3GZNeBujGK3l51QOZq3e0YKwatWqLUnqptJR"/>
+</div>
+<div class="text-[12px]">
+<p class="font-semibold text-stone-800">Sarah K.</p>
+<p class="text-stone-400">Oct 15, 2024</p>
+</div>
+<a class="ml-auto text-[#C25E7A] text-sm hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Blog Card 4 -->
+<div class="bg-white rounded-[24px] p-9 blog-card-shadow border border-primary-container/5 hover:-translate-y-2 transition-transform duration-300">
+<img alt="Therapy" class="w-full h-[240px] object-cover rounded-[16px] mb-6" data-alt="Artistic therapy room with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYZyQ91hiNOnkpvVQHn0s8662_dzUbOAUWn4719vmMPX6hzXe7MWP4O5JFgAyGNhsDfirgBykbTYR-Cur-HtX4FbEC0p7rgj73owXBiRR9c9ddTMKCxLvKLZgGyfylx2yzVwWGRDbvUNErslIG9--ipCByBIBlf7qICeM8OmaEHzHAMIaplau4He6OXZqCIEOovjRV2V6zC-SHULGYunUIOds3sKpTW_H-JDm21llNs11S8tNaw7uKjKls26_nqOvhsXBa6p9St8GH"/>
+<span class="inline-block bg-secondary px-3 py-1 rounded-full text-primary-container text-[10px] font-bold mb-4 uppercase tracking-wider">Founder's Notes</span>
+<h3 class="font-garamond text-[24px] text-primary-container leading-snug mb-3">Why Vulnerability is a Radical Act</h3>
+<p class="text-stone-600 font-light text-[14px] leading-relaxed mb-6 line-clamp-2">An editorial on the importance of soft spaces in a world that demands hardness.</p>
+<div class="flex items-center gap-3 pt-4 border-t border-stone-100">
+<div class="w-8 h-8 rounded-full bg-stone-200 overflow-hidden">
+<img alt="Author" data-alt="Portrait of the founder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4wb8XfLQeH2vRMRIuVEsNOKfFXJHBZ4VTDi44I2hyhfKCTiUw3z_4wp6Ls9bGlvJzSx3asdncEya3V-DAb6OlqJcRmSjJj0D2mTae6A2LLPoCDfcpl51AYTId09ewy1ttt2dTwVGMOEfFJaAjFXC79YDof_Ndz9qntwGPLFYfGLUp4ajqYBnhVZ_fkq8fKUvSHjHfLQfRI1gm2BmqOQ30ny0YiYy5yQxBzdDwrFoMc0_zavygp4Nj2UExxNrYdGpGJdvHda2mbGiF"/>
+</div>
+<div class="text-[12px]">
+<p class="font-semibold text-stone-800">Arjun Mehta</p>
+<p class="text-stone-400">Oct 12, 2024</p>
+</div>
+<a class="ml-auto text-[#C25E7A] text-sm hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<button class="w-full py-6 text-primary font-semibold border-2 border-primary/10 rounded-xl hover:bg-primary hover:text-white transition-colors">
+                        Load More Entries
+                    </button>
+</div>
+<!-- Sidebar -->
+<aside class="lg:w-[30%] space-y-12">
+<!-- Search -->
+<div class="relative">
+<input class="w-full bg-white border border-stone-200 rounded-full py-4 px-6 focus:outline-none focus:border-primary-container transition-colors text-stone-600 placeholder:text-stone-400" placeholder="Search the sanctuary..." type="text"/>
+<span class="material-symbols-outlined absolute right-6 top-1/2 -translate-y-1/2 text-primary-container">search</span>
+</div>
+<!-- Categories -->
+<div>
+<h4 class="text-[11px] font-semibold text-[#C25E7A] uppercase tracking-[0.2em] mb-6">CATEGORIES</h4>
+<ul class="space-y-4">
+<li class="flex items-center justify-between group cursor-pointer">
+<span class="ribbon-xs text-stone-700 group-hover:text-primary">Mental Health</span>
+<span class="text-xs text-stone-400">(12)</span>
+</li>
+<li class="flex items-center justify-between group cursor-pointer">
+<span class="ribbon-xs text-stone-700 group-hover:text-primary">Community Stories</span>
+<span class="text-xs text-stone-400">(8)</span>
+</li>
+<li class="flex items-center justify-between group cursor-pointer">
+<span class="ribbon-xs text-stone-700 group-hover:text-primary">Creative Arts</span>
+<span class="text-xs text-stone-400">(6)</span>
+</li>
+<li class="flex items-center justify-between group cursor-pointer">
+<span class="ribbon-xs text-stone-700 group-hover:text-primary">Founder's Notes</span>
+<span class="text-xs text-stone-400">(4)</span>
+</li>
+<li class="flex items-center justify-between group cursor-pointer">
+<span class="ribbon-xs text-stone-700 group-hover:text-primary">Research &amp; Insights</span>
+<span class="text-xs text-stone-400">(5)</span>
+</li>
+</ul>
+</div>
+<!-- Recent Posts -->
+<div>
+<h4 class="text-[11px] font-semibold text-[#C25E7A] uppercase tracking-[0.2em] mb-6">RECENT POSTS</h4>
+<div class="space-y-6">
+<a class="flex gap-4 group" href="#">
+<img alt="Post" class="w-14 h-14 rounded-lg object-cover" data-alt="Green leaf detail with water droplets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFYCK4NeGSo90ovSay558J8p0ofLWuv8b2W59zI197EukU7OdHibNJ52F6CK6m5Gh1sPZ4DkGBdQUjnsyL5rwDHs4Z5wUmaH7BqBUgbkr_E-xbDLd8uik8OFpoXAy01hhCPvZi7SGzzWV_e1p6DvOOOa6WIMK2KYQdfQVrbdQPPUyA9wHHryac1ZpKYoJ5o7u6hAX3Mvk00yfI4y14r1StI_EJMz44lPbZQSDkhU-p0EKHQnL4YmK1E5YVGxkHjssbvhu92pB3vgDB"/>
+<div>
+<h5 class="text-sm font-semibold text-stone-800 leading-tight group-hover:text-primary-container transition-colors">The Architecture of Empathy</h5>
+<p class="text-[10px] text-stone-400 mt-1 uppercase">Oct 10, 2024</p>
+</div>
+</a>
+<a class="flex gap-4 group" href="#">
+<img alt="Post" class="w-14 h-14 rounded-lg object-cover" data-alt="Soft morning sunlight hitting a wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBITCs52G8cnlatRHCHG7nqSrmVR4xqc2fXBmIK8N9ApJKZSmtKd4fgU1A-_fSgiqkk9YBXdbZtSRftrpJQ647Vz7O1jruhKzaKdFqu4iu8k98eajOGP3WBileF-Ec4iwLvILdYyzOjNia6dylOHfW6QFslBKKZP7exRD0_VC8_-Y9VN6d9PX1pnL7yUqam6EAmAaJf4XJck4u550FaxiobF2bIYqQqC2WyStMD0Rbht341RIhCQzwoQK4zvqC9XFXITIGTZZ3zvVuE"/>
+<div>
+<h5 class="text-sm font-semibold text-stone-800 leading-tight group-hover:text-primary-container transition-colors">Healing via Herbal Lore</h5>
+<p class="text-[10px] text-stone-400 mt-1 uppercase">Oct 08, 2024</p>
+</div>
+</a>
+<a class="flex gap-4 group" href="#">
+<img alt="Post" class="w-14 h-14 rounded-lg object-cover" data-alt="Artistic cup of tea with steam" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANNK9GAybth215qfDL7RvhyciyfBClN-mDTM3LxYnTXNj87O5mbigaH-RMySR25t9fZo8pvWS47-kWrl6AhxC_Tht50GnlXhUT9Vflu0VuuoKxedvcMIrY7AOhWmRdtkmlgdauRrv0H7cm6OVo_WfRFO9GVvRgF4j56JBBWhvGa2CdryRjCMuASm_ZwYV79BOQyP0BqXwQ7h8yNMA5a4hDHzjd-fHY10osWNP1Dl2Si5AOuBui_S-SyEwIoBIp5QcI8objDl3t9efF"/>
+<div>
+<h5 class="text-sm font-semibold text-stone-800 leading-tight group-hover:text-primary-container transition-colors">Tea as a Ritual of Return</h5>
+<p class="text-[10px] text-stone-400 mt-1 uppercase">Oct 05, 2024</p>
+</div>
+</a>
+</div>
+</div>
+<!-- About the Blog -->
+<div class="bg-primary-container/5 rounded-[24px] p-6 border border-primary-container/10">
+<h4 class="text-[11px] font-semibold text-[#C25E7A] uppercase tracking-[0.2em] mb-6">ABOUT THE BLOG</h4>
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full overflow-hidden mb-4 border-2 border-white blog-card-shadow">
+<img alt="Founder" data-alt="Founder Arjun Mehta portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXM_SRgTIlokdE0d13QZe4vgbupTHC3pDZQE94X6EnGPkX3fE7qsH0XxBqaov1FGf5Yx5z3dmIMToI1-qEdp1_OBnn0KbPNFGgp32BQ7RNIfDHb41PfOi9-uB1QKwoPVBqL8YMXu5QeZ9gAJWm74Y_8UBH3tJ_tgwiHzuCW6RdzP8AufxLH6Ztlm1zEI-yNbV3T9WenR-9NhtMxNlcUifM2NmsJRQlJX6GY_oQbZTFFaoBbxFa-aGccKrc5loJ6AGjt80aiCLHui16"/>
+</div>
+<p class="text-[13px] text-stone-600 leading-relaxed font-light mb-4">
+                                Curating space for deep listening and collective restoration. Founded by Arjun Mehta.
+                            </p>
+<span class="ribbon-xs">Est. 2024</span>
+</div>
+</div>
+</aside>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-24 px-12 bg-[#115238] dark:bg-stone-950 text-[#fbf9f8]">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-end w-full max-w-[1440px] mx-auto">
+<div class="space-y-6">
+<div class="font-['Mercury_Text'] text-3xl text-white">Shohojatri</div>
+<p class="font-['Apple_Garamond'] italic text-lg text-stone-300">
+                    © 2024 Shohojatri Psychosocial Welfare. Curating the Academic Sanctuary.
+                </p>
+</div>
+<div class="flex gap-8 justify-center">
+<a class="text-stone-300 hover:text-[#9ae600] transition-colors font-['Apple_Garamond'] italic text-lg" href="#">Privacy Policy</a>
+<a class="text-stone-300 hover:text-[#9ae600] transition-colors font-['Apple_Garamond'] italic text-lg" href="#">Editorial Guidelines</a>
+</div>
+<div class="flex gap-8 justify-end">
+<a class="text-stone-300 hover:text-[#9ae600] transition-colors font-['Apple_Garamond'] italic text-lg" href="#">Research Ethics</a>
+<a class="text-stone-300 hover:text-[#9ae600] transition-colors font-['Apple_Garamond'] italic text-lg" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>
