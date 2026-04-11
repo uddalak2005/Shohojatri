@@ -1,0 +1,43 @@
+:root {
+  /* Colors */
+  --color-primary: #2e6a4f;
+  --color-primary-dark: #115238;
+  --color-secondary: #9ae600;
+  --color-tertiary: #C25E7A;
+  --color-background: #f8fdf8;
+  --color-white: #ffffff;
+  --color-body: #3a3a3a;
+  --color-muted: #888888;
+  --color-outline: #79747E;
+  --color-outline-variant: #CAC4D0;
+
+  /* Typography */
+  --font-display: 'Newsreader', 'Mercury Text', Georgia, serif;
+  --font-serif: 'Newsreader', 'Apple Garamond', Georgia, serif; /* Using Newsreader as the available high-quality serif */
+  --font-body: 'Inter', 'Neue Haas Grotesk', 'Helvetica Neue', sans-serif;
+  --font-label: 'Inter', sans-serif;
+
+  /* Spacing */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 32px;
+  --space-lg: 64px;
+  --space-xl: 96px;
+  --space-2xl: 140px;
+
+  /* Radius */
+  --radius-sm: 12px;
+  --radius-md: 24px;
+  --radius-lg: 32px;
+  --radius-pill: 100px;
+
+  /* Shadows */
+  --shadow-card: 0 4px 32px rgba(46,106,79,0.07);
+  --shadow-hover: 0 20px 56px rgba(46,106,79,0.14);
+  --shadow-node: 0 4px 20px rgba(46,106,79,0.3);
+
+  /* Transitions */
+  --transition-base: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition-slow: 0.65s ease-out;
+  --transition-spring: 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
