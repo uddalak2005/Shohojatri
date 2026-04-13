@@ -5,7 +5,7 @@ import AboutAchintya from '../components/achintya/AboutAchintya';
 import AchintyaServices from '../components/achintya/AchintyaServices';
 import AchintyaGalleryStrip from '../components/achintya/AchintyaGalleryStrip';
 import WorkshopSchedule from '../components/achintya/WorkshopSchedule';
-import AchintyaTestimonials from '../components/achintya/AchintyaTestimonials';
+import AchintyaTeam from '../components/achintya/AchintyaTeam';
 import Footer from '../components/global/Footer';
 
 export default function Achintya() {
@@ -21,7 +21,7 @@ export default function Achintya() {
         <AchintyaServices />
         <AchintyaGalleryStrip />
         <WorkshopSchedule />
-        <AchintyaTestimonials />
+        <AchintyaTeam />
       </main>
       <Footer />
     </div>

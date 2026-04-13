@@ -1,9 +1,54 @@
 export const achintyaFocusAreas = [
-  'Ecstatic Dance & Somatic Movement',
-  'Meditative Recitation & Breathwork',
-  'Therapeutic Music & Sound Baths',
-  'Visual Arts & Creative Expression',
-  'Integrated Arts for Mental Resilience'
+  'Performance Arts',
+  'Spoken Word & Recitation',
+  'Music & Expression',
+  'Cultural Storytelling',
+  'Community Engagement'
+];
+
+export const achintyaMembers = [
+  {
+    id: 1,
+    name: "Ahana Mishra",
+    role: "Founder",
+    photo: ""
+  },
+  {
+    id: 2,
+    name: "Oindri Das",
+    role: "Founder",
+    photo: ""
+  },
+  {
+    id: 3,
+    name: "Souris Lahiri",
+    role: "Scriptwriter, Guitarist & Reciter",
+    photo: ""
+  },
+  {
+    id: 4,
+    name: "Moupriya Roy",
+    role: "Production / Stage Manager",
+    photo: ""
+  },
+  {
+    id: 5,
+    name: "Teesta Saha",
+    role: "Vocalist",
+    photo: ""
+  },
+  {
+    id: 6,
+    name: "Soumyuntika Chakraborty",
+    role: "Reciter",
+    photo: ""
+  },
+  {
+    id: 7,
+    name: "Srotoswini Kundu",
+    role: "Media Partner",
+    photo: ""
+  }
 ];
 
 export const achintyaPathways = [

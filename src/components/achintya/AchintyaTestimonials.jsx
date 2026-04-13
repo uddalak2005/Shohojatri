@@ -9,14 +9,14 @@ const AchintyaTestimonials = () => {
   return (
     <section className="py-24 bg-[rgba(194,94,122,0.06)] px-8">
       <div className="max-w-[1280px] mx-auto">
-        <SectionHeader 
+        <SectionHeader
           label="Voices of Healing"
           titleLine1="Stories of"
           titleLine2="Transformation"
           italic={2}
           accentColor="#C25E7A"
         />
-        
+
         <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-3 gap-12 animate">
           {achintyaTestimonials.map((testimonial) => (
             <div key={testimonial.id} className="relative bg-white p-12 rounded-xl border-l-4 border-[#C25E7A] shadow-xl shadow-black/[0.02] hover:-translate-y-2 transition-transform duration-300">

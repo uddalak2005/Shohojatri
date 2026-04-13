@@ -341,27 +341,7 @@ const HeroRight = ({ isInView }) => (
       </span>
     </motion.div>
 
-    {/* SNU tag — bottom right */}
-    <motion.div
-      className="absolute bottom-[12%] right-[0%] px-4 py-3 rounded-[16px]"
-      style={{
-        background: 'rgba(255,255,255,0.88)',
-        backdropFilter: 'blur(16px)',
-        border: '1px solid rgba(194,94,122,0.12)',
-        boxShadow: '0 4px 20px rgba(194,94,122,0.06)',
-      }}
-      initial={{ opacity: 0, x: 20, y: 12 }}
-      animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
-      transition={{ duration: 0.8, delay: 1.1, ease: [0.25, 0.8, 0.25, 1] }}
-      whileHover={{ y: -4, transition: { duration: 0.3 } }}
-    >
-      <span style={{ fontFamily: 'var(--font-body)', fontSize: '9px', fontWeight: 500, color: '#888', letterSpacing: '0.15em', textTransform: 'uppercase', display: 'block', marginBottom: '4px' }}>
-        Department of
-      </span>
-      <span style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: '15px', color: '#C25E7A' }}>
-        Psychology, SNU
-      </span>
-    </motion.div>
+    {/* SNU tag removed as requested */}
 
   </motion.div>
 );
@@ -420,15 +400,22 @@ const Hero = () => {
           {/* Headline */}
           <div className="flex flex-col gap-0 overflow-hidden mb-6">
             {[
-              { text: heroData.titleLine1 || 'Walking Together', italic: true, delay: 0.2 },
-              { text: heroData.titleLine2 || 'Toward Wellbeing', italic: false, delay: 0.32 },
-            ].map(({ text, italic, delay }) => (
+              { text: heroData.titleLine1 || 'Walking Together', italic: true, delay: 0.2, size: 'clamp(40px, 6vw, 80px)' },
+              { text: heroData.titleLine2 || 'Toward Wellbeing', italic: false, delay: 0.32, size: 'clamp(28px, 4.5vw, 56px)' },
+            ].map(({ text, italic, delay, size }) => (
               <div key={text} style={{ overflow: 'hidden' }}>
                 <motion.span
                   initial={{ y: '110%', opacity: 0 }}
                   animate={isInView ? { y: '0%', opacity: 1 } : {}}
                   transition={{ duration: 0.9, delay, ease: [0.22, 1, 0.36, 1] }}
-                  style={{ fontFamily: 'var(--font-display)', fontStyle: italic ? 'italic' : 'normal', fontSize: 'clamp(44px, 6.5vw, 92px)', color: '#2e6a4f', lineHeight: 1.05, display: 'block' }}
+                  style={{
+                    fontFamily: 'var(--font-display)',
+                    fontStyle: italic ? 'italic' : 'normal',
+                    fontSize: size, // 👈 different sizes
+                    color: '#2e6a4f',
+                    lineHeight: 1.05,
+                    display: 'block'
+                  }}
                 >
                   {text}
                 </motion.span>
@@ -449,9 +436,9 @@ const Hero = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.44 }}
-            style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontSize: 'clamp(15px, 1.4vw, 20px)', color: '#C25E7A', marginBottom: '16px', letterSpacing: '0.02em' }}
+            style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontSize: 'clamp(22px, 2.2vw, 32px)', fontWeight: 600, color: '#C25E7A', marginBottom: '16px', letterSpacing: '0.02em' }}
           >
-            Journey of Togetherness
+            The Journey of Togetherness
           </motion.p>
 
           {/* Description */}
@@ -459,7 +446,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.54 }}
-            style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(14px, 1.1vw, 16px)', color: '#4a4a4a', lineHeight: 1.85, maxWidth: '480px', marginBottom: '36px' }}
+            style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: 'clamp(16px, 1.4vw, 20px)', color: '#4a4a4a', lineHeight: 1.85, maxWidth: '480px', marginBottom: '36px' }}
           >
             {heroData.description || `Shohojatri is a psychosocial welfare initiative dedicated to walking alongside individuals and communities toward mental wellbeing, resilience, and emotional empowerment.`}
           </motion.p>
@@ -477,7 +464,7 @@ const Hero = () => {
 
           {/* Stats */}
           <motion.div
-            className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-3 w-full mt-12"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full mt-12"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.8 }}
@@ -486,7 +473,6 @@ const Hero = () => {
               { value: '500', label: 'Lives Touched' },
               { value: '30', label: 'Workshops' },
               { value: '5', label: 'Years' },
-              { value: '12', label: 'Programs' },
             ]).map((stat, i) => (
               <StatCard key={stat.label} value={stat.value} label={stat.label} delay={0.85 + i * 0.08} />
             ))}

@@ -11,8 +11,8 @@ const WorkshopSchedule = () => {
     <section className="py-24 px-8 max-w-[1280px] mx-auto">
       <SectionHeader 
         label="Calendar"
-        titleLine1="Upcoming"
-        titleLine2="Sessions"
+        titleLine1="Find Us"
+        titleLine2="on Stage"
         italic={2}
         accentColor="#C25E7A"
       />
@@ -44,6 +44,11 @@ const WorkshopSchedule = () => {
             </tbody>
           </table>
         </div>
+      </div>
+      <div className="mt-12 flex justify-center">
+        <Button variant="primary" href="/contact">
+          Book a Workshop
+        </Button>
       </div>
     </section>
   );

@@ -88,7 +88,7 @@ const AboutUs = () => {
                 style={{
                   fontFamily: 'var(--font-body)',
                   fontWeight: 300,
-                  fontSize: '16px',
+                  fontSize: 'clamp(16px, 1.35vw, 20px)',
                 }}
               >
                 {p}

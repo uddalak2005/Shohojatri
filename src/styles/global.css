@@ -16,6 +16,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Global body sizing for better desktop readability */
+p {
+  font-size: clamp(16px, 1.25vw, 20px);
+  line-height: 1.8;
+}
+
+li {
+  font-size: clamp(16px, 1.25vw, 20px);
+}
+
 /* Typography Utilities */
 .serif-regular {
   font-family: var(--font-display);
@@ -77,4 +87,18 @@ body {
 .animate.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+  min-width: 200%;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }

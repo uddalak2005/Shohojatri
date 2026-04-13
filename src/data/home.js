@@ -1,7 +1,7 @@
 export const heroData = {
   badge: "A Sanctuary for Psychosocial Welfare",
-  titleLine1: "Compassion in",
-  titleLine2: "Every Step",
+  titleLine1: "Walking together",
+  titleLine2: "towards wellbeing",
   description: "Bridging the gap between academic research and human empathy through community-led psychological initiatives.",
   stats: [
     { label: "Lives Impacted", value: 500 },

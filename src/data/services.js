@@ -10,7 +10,7 @@ export const services = [
     id: 2,
     number: "02",
     icon: "theater_comedy",
-    title: "Creative Arts Therapy",
+    title: "Expressive Interventions",
     description: "Using expression as a bridge to subconscious healing and emotional release."
   },
   {
@@ -24,7 +24,7 @@ export const services = [
     id: 4,
     number: "04",
     icon: "groups",
-    title: "Community Workshops",
+    title: "Community Outreach",
     description: "Collaborative group dynamics designed to foster shared resilience and support."
   }
 ];

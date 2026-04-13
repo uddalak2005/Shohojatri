@@ -9,6 +9,7 @@ import Milestones from '../components/home/Milestones';
 import AchintyaSpotlight from '../components/home/AchintyaSpotlight';
 import BlogPreview from '../components/home/BlogPreview';
 import Members from '../components/home/Members';
+import PartnersMarquee from '../components/home/PartnersMarquee';
 import Footer from '../components/global/Footer';
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
         <AchintyaSpotlight />
         <BlogPreview />
         <Members />
+        <PartnersMarquee />
       </main>
       <Footer />
     </div>

@@ -12,7 +12,7 @@ const VisionMission = () => {
         <div className="md:col-span-5 space-y-8 border-b md:border-b-0 md:border-r border-white/10 pb-16 md:pb-0 md:pr-16">
           <div className="flex items-center gap-2">
             <RibbonIcon size="xs" color="#ffffff" />
-            <span className="font-label text-xs text-white uppercase tracking-[0.2em]">
+            <span className="font-label text-sm md:text-base text-white uppercase tracking-[0.2em] font-medium">
               {visionMission[0].label}
             </span>
           </div>
@@ -27,7 +27,7 @@ const VisionMission = () => {
         <div className="md:col-span-7 space-y-10">
           <div className="flex items-center gap-2">
             <RibbonIcon size="xs" color="#ffffff" />
-            <span className="font-label text-xs text-white uppercase tracking-[0.2em]">
+            <span className="font-label text-sm md:text-base text-white uppercase tracking-[0.2em] font-medium">
               {visionMission[1].label}
             </span>
           </div>

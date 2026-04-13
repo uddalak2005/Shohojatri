@@ -14,7 +14,7 @@ const SectionHeader = ({
     <div className={`flex flex-col gap-4 ${centered ? 'items-center text-center' : ''} mb-16`}>
       <div className="flex items-center gap-2">
         <RibbonIcon size="xs" color={accentColor} />
-        <span className="font-label text-xs uppercase tracking-[0.2em]" style={{ color: accentColor }}>
+        <span className="font-label text-sm md:text-base uppercase tracking-[0.2em] font-medium" style={{ color: accentColor }}>
           {label}
         </span>
       </div>
