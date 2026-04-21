@@ -66,6 +66,8 @@ const FounderDesk = () => {
                 className="w-full h-full object-cover"
                 src={founder.photo}
                 alt={founder.name}
+                loading="lazy"
+                decoding="async"
               />
             </div>
 

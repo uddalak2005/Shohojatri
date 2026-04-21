@@ -24,7 +24,9 @@ const AchintyaGalleryStrip = () => {
             <img 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
               src={src} 
-              alt={`Achintya gallery ${i}`} 
+              alt={`Achintya gallery ${i}`}
+              loading="lazy"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-[#C25E7A]/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </div>

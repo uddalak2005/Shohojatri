@@ -13,15 +13,8 @@ const navLinks = [
 ];
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Close menu on route change
   useEffect(() => {
@@ -37,11 +30,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 w-full z-[100] transition-all duration-400 h-[72px]
-          ${isScrolled
-            ? 'bg-[#f8fdf8]/92 backdrop-blur-[20px] border-b border-[#2e6a4f]/10 shadow-[0_4px_24px_rgba(46,106,79,0.06)]'
-            : 'bg-transparent border-b border-transparent'
-          }`}
+        className="fixed top-0 w-full z-[100] transition-all duration-400 h-[72px] bg-[#f8fdf8]/50 backdrop-blur-[20px] border-b border-[#2e6a4f]/10 shadow-[0_4px_24px_rgba(46,106,79,0.06)]"
       >
         <div className="flex justify-between items-center px-8 lg:px-10 max-w-[1280px] mx-auto w-full h-full">
 
@@ -49,8 +38,11 @@ const Navbar = () => {
           <NavLink to="/" className="group flex items-center gap-3 no-underline">
             <img
               src={Shohojatri}
+              alt="Shohojatri logo"
               className='w-12 h-12'
-            ></img>
+              loading="eager"
+              decoding="async"
+            />
             <div className="flex flex-col leading-none">
               <span
                 className="text-[20px] font-semibold text-[#2e6a4f] tracking-[0.08em] uppercase leading-none"
@@ -67,8 +59,16 @@ const Navbar = () => {
             </div>
           </NavLink>
 
-          {/* ── Desktop Nav (lg and above) ── */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
+            {/* <div className="flex items-center gap-4 mr-2">
+              <a href="mailto:shohojatri.welfare@gmail.com" className="w-9 h-9 rounded-full border border-[#2e6a4f]/20 flex items-center justify-center text-[#2e6a4f] hover:bg-[#2e6a4f] hover:text-white transition-all shadow-sm" title="Email Us">
+                <span className="material-symbols-outlined text-[18px]">mail</span>
+              </a>
+              <a href="/contact" className="w-9 h-9 rounded-full border border-[#2e6a4f]/20 flex items-center justify-center text-[#2e6a4f] hover:bg-[#2e6a4f] hover:text-white transition-all shadow-sm" title="Contact Us">
+                <span className="material-symbols-outlined text-[18px]">call</span>
+              </a>
+            </div> */}
+
             {navLinks.map(({ to, label }) => (
               <NavLink
                 key={to}
@@ -100,7 +100,7 @@ const Navbar = () => {
             <Button
               variant="primary"
               href="/contact"
-              className="ml-2 px-6 py-[10px] text-[13px]"
+              className="px-6 py-[10px] text-[13px]"
             >
               Walk With Us →
             </Button>

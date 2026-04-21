@@ -16,7 +16,9 @@ const BlogGrid = () => {
               <img 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 src={post.image} 
-                alt={post.title} 
+                alt={post.title}
+                loading="lazy"
+                decoding="async"
               />
               <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-[#2e6a4f]">
                 {post.category}

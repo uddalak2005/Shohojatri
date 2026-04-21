@@ -167,42 +167,61 @@ const BackgroundElements = () => (
   </div>
 );
 
-// ── Stat Card ─────────────────────────────────────────────────────────────
-const StatCard = ({ value, label, delay }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.7, delay, ease: [0.25, 0.8, 0.25, 1] }}
-    className="flex flex-col px-5 py-5 rounded-[20px]"
-    style={{
-      background: 'rgba(255,255,255,0.75)',
-      backdropFilter: 'blur(16px)',
-      border: '1px solid rgba(46,106,79,0.08)',
-      boxShadow: '0 4px 24px rgba(46,106,79,0.06)',
-    }}
-  >
-    <span style={{
-      fontFamily: 'var(--font-display)',
-      fontSize: 'clamp(28px, 3vw, 40px)',
-      fontWeight: 400,
-      color: '#2e6a4f',
-      lineHeight: 1,
-    }}>
-      {value}+
-    </span>
-    <span style={{
-      fontFamily: 'var(--font-body)',
-      fontSize: '10px',
-      fontWeight: 500,
-      color: '#888',
-      letterSpacing: '0.14em',
-      textTransform: 'uppercase',
-      marginTop: '8px',
-    }}>
-      {label}
-    </span>
-  </motion.div>
-);
+// ── Action Card ─────────────────────────────────────────────────────────────
+const ActionCard = ({ icon, title, subtitle, href, delay, children }) => {
+  const content = (
+    <>
+      <div className="absolute -right-4 -top-4 text-[80px] text-black/5 opacity-0 group-hover:opacity-10 transition-opacity duration-500 material-symbols-outlined pointer-events-none">
+        {icon}
+      </div>
+
+      <div className="w-10 h-10 rounded-full bg-[#2e6a4f]/10 text-[#2e6a4f] flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-[#2e6a4f] group-hover:text-white transition-all duration-300">
+        <span className="material-symbols-outlined text-[20px]">{icon}</span>
+      </div>
+
+      {children ? children : (
+        <>
+          <span style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 500, color: '#2e6a4f', lineHeight: 1.2, display: 'block' }}>
+            {title}
+          </span>
+          <span style={{ fontFamily: 'var(--font-body)', fontSize: '12px', fontWeight: 400, color: '#666', marginTop: '4px', display: 'block' }}>
+            {subtitle}
+          </span>
+        </>
+      )}
+    </>
+  );
+
+  const style = {
+    background: 'rgba(255,255,255,0.75)',
+    backdropFilter: 'blur(16px)',
+    border: '1px solid rgba(46,106,79,0.08)',
+    boxShadow: '0 4px 24px rgba(46,106,79,0.06)',
+    textDecoration: 'none'
+  };
+
+  const motionProps = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    whileHover: { y: -4, backgroundColor: 'rgba(255,255,255,0.95)' },
+    transition: { duration: 0.7, delay, ease: [0.25, 0.8, 0.25, 1] },
+    className: "flex flex-col px-5 py-5 rounded-[20px] relative overflow-hidden group border border-[#2e6a4f]/10"
+  };
+
+  if (href) {
+    return (
+      <motion.a href={href} {...motionProps} style={style}>
+        {content}
+      </motion.a>
+    );
+  }
+
+  return (
+    <motion.div {...motionProps} style={style}>
+      {content}
+    </motion.div>
+  );
+};
 
 // ── Scroll Indicator ──────────────────────────────────────────────────────
 const ScrollIndicator = () => (
@@ -288,6 +307,8 @@ const HeroRight = ({ isInView }) => (
           src={Shohojatri}
           alt="Shohojatri Logo"
           className="w-full h-full object-contain scale-[2.5]"
+          loading="eager"
+          decoding="async"
           style={{
             filter: 'drop-shadow(0 10px 30px rgba(46,106,79,0.15))',
           }}
@@ -462,20 +483,46 @@ const Hero = () => {
             <Button variant="ghost" href="#about">Discover More ↓</Button>
           </motion.div>
 
-          {/* Stats */}
+          {/* Action Cards (Replaces Stats) */}
           <motion.div
             className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full mt-12"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.8 }}
           >
-            {(heroData.stats || [
-              { value: '500', label: 'Lives Touched' },
-              { value: '30', label: 'Workshops' },
-              { value: '5', label: 'Years' },
-            ]).map((stat, i) => (
-              <StatCard key={stat.label} value={stat.value} label={stat.label} delay={0.85 + i * 0.08} />
-            ))}
+            {/* <ActionCard
+              icon="calendar_month"
+              title="Book a Workshop"
+              subtitle="Tailored Programs"
+              href="/contact"
+              delay={0.85}
+            /> */}
+
+            {/* <ActionCard 
+              icon="mic" 
+              title="Find Us on Stage" 
+              subtitle="Upcoming Talks" 
+              href="/blog" 
+              delay={0.93} 
+            /> */}
+
+            {/* <ActionCard
+              icon="forum"
+              delay={1.01}
+            >
+              <span style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 500, color: '#2e6a4f', lineHeight: 1.2, display: 'block' }}>
+                Reach Us
+              </span>
+              <div className="flex gap-3 mt-4 relative z-10 w-full" onClick={e => e.stopPropagation()}>
+                <a href="mailto:shohojatri.welfare@gmail.com" className="w-10 h-10 rounded-full bg-[#2e6a4f]/10 text-[#2e6a4f] hover:bg-[#2e6a4f] hover:text-white flex items-center justify-center transition-all border border-[#2e6a4f]/20" title="Email Us">
+                  <span className="material-symbols-outlined text-[18px]">mail</span>
+                </a>
+                <a href="tel:9903491795" className="w-10 h-10 rounded-full bg-[#2e6a4f]/10 text-[#2e6a4f] hover:bg-[#2e6a4f] hover:text-white flex items-center justify-center transition-all border border-[#2e6a4f]/20" title="Call Us">
+                  <span className="material-symbols-outlined text-[18px]">call</span>
+                </a>
+              </div>
+            </ActionCard> */}
+
           </motion.div>
 
         </div>

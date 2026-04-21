@@ -112,6 +112,8 @@ const HeroRight = ({ isInView }) => (
             src={AchintyaGroup}
             alt="Achintya Group"
             className="w-full h-full object-cover"
+            loading="eager"
+            decoding="async"
           />
         </div>
       </div>

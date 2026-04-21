@@ -40,7 +40,7 @@ const AboutAchintya = () => {
           ].map((para, pi) => (
             <motion.p
               key={pi}
-              className="text-lg leading-relaxed apple-garamond text-[#3a3a3a]"
+              className="text-xl leading-relaxed apple-garamond text-[#3a3a3a]"
               initial={{ opacity: 0, filter: 'blur(8px)', y: 20 }}
               animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
               transition={{

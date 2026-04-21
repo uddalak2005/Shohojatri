@@ -14,7 +14,9 @@ const GalleryGrid = ({ items }) => {
               <img 
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" 
                 src={item.src} 
-                alt={item.caption} 
+                alt={item.caption}
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#2e6a4f]/90 via-[#2e6a4f]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
                 <span className="text-[#9ae600] text-xs font-label uppercase tracking-widest mb-1">

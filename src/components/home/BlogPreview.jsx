@@ -30,7 +30,9 @@ const BlogPreview = () => {
               <img 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                 src={post.image} 
-                alt={post.title} 
+                alt={post.title}
+                loading="lazy"
+                decoding="async"
               />
               <span className="absolute top-4 left-4 bg-[#9ae600]/90 text-[#115238] px-3 py-1 rounded-full text-[10px] uppercase tracking-widest font-bold">
                 {post.category}

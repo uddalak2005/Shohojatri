@@ -21,7 +21,7 @@ const AchintyaTeam = () => {
         {achintyaMembers.map((member) => (
           <div key={member.id} className="text-center space-y-4 group">
             <div className="w-24 h-24 rounded-full overflow-hidden mx-auto bg-gray-200 grayscale group-hover:grayscale-0 transition-all duration-500 ring-2 ring-transparent group-hover:ring-[#C25E7A]/40 ring-offset-4 shadow-lg">
-              {member.photo && <img className="w-full h-full object-cover" src={member.photo} alt={member.name} />}
+              {member.photo && <img className="w-full h-full object-cover" src={member.photo} alt={member.name} loading="lazy" decoding="async" />}
             </div>
             <div className="space-y-1">
               <h4 className="serif-regular text-xl text-[#3a3a3a]">{member.name}</h4>
