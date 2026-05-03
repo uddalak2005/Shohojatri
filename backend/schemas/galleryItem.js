@@ -4,7 +4,6 @@ export default {
   type: 'document',
   fields: [
     { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
-    { name: 'tag', title: 'Tag', type: 'string' },
     { name: 'caption', title: 'Caption', type: 'string' },
     { 
       name: 'height', 

@@ -13,14 +13,6 @@ const GalleryGrid = ({ items, loading, currentPage = 1, totalPages = 1, onPageCh
     return '';
   };
 
-  if (loading) {
-    return (
-      <div className="px-12 py-24 flex justify-center">
-        <div className="animate-pulse text-[#2e6a4f] serif-regular text-2xl">Loading the gallery...</div>
-      </div>
-    );
-  }
-
   if (!items || items.length === 0) {
     return (
       <div className="px-12 py-24 flex justify-center">
@@ -43,9 +35,6 @@ const GalleryGrid = ({ items, loading, currentPage = 1, totalPages = 1, onPageCh
                 decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#2e6a4f]/90 via-[#2e6a4f]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                <span className="text-[#9ae600] text-xs font-label uppercase tracking-widest mb-1">
-                  {item.tags ? item.tags.join(', ') : item.tag}
-                </span>
                 <h3 className="apple-garamond italic text-2xl text-white">
                   {item.title || item.caption}
                 </h3>

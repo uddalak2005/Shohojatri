@@ -1,137 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shohojatri | Psychosocial Welfare Initiative</title>
-    <meta name="description" content="Shohojatri is a psychosocial welfare initiative dedicated to emotional empowerment, resilience, and the journey of healing — together." />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Inter:wght@300;400;500;600;700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "background": "#fbf9f8",
-              "surface": "#fbf9f8",
-              "surface-bright": "#fbf9f8",
-              "surface-dim": "#dcd9d9",
-              "surface-container-lowest": "#ffffff",
-              "surface-container-low": "#f6f3f2",
-              "surface-container": "#f0eded",
-              "surface-container-high": "#eae8e7",
-              "surface-container-highest": "#e4e2e1",
-              "on-surface": "#1b1c1c",
-              "on-surface-variant": "#404943",
-              "surface-variant": "#e4e2e1",
-              "outline": "#707973",
-              "outline-variant": "#bfc9c1",
-              "primary": "#115238",
-              "primary-container": "#2e6a4f",
-              "primary-fixed": "#b1f0ce",
-              "primary-fixed-dim": "#96d4b3",
-              "on-primary": "#ffffff",
-              "on-primary-container": "#a9e7c5",
-              "on-primary-fixed": "#002113",
-              "on-primary-fixed-variant": "#105138",
-              "inverse-primary": "#96d4b3",
-              "secondary": "#446900",
-              "secondary-container": "#abf926",
-              "secondary-fixed": "#abf926",
-              "secondary-fixed-dim": "#92db00",
-              "on-secondary": "#ffffff",
-              "on-secondary-container": "#486f00",
-              "on-secondary-fixed": "#111f00",
-              "on-secondary-fixed-variant": "#324f00",
-              "tertiary": "#7e2844",
-              "tertiary-container": "#9c405b",
-              "tertiary-fixed": "#ffd9e0",
-              "tertiary-fixed-dim": "#ffb1c3",
-              "on-tertiary": "#ffffff",
-              "on-tertiary-container": "#ffcdd7",
-              "on-tertiary-fixed": "#3f0019",
-              "on-tertiary-fixed-variant": "#7d2743",
-              "error": "#ba1a1a",
-              "error-container": "#ffdad6",
-              "on-error": "#ffffff",
-              "on-error-container": "#93000a",
-              "inverse-surface": "#303030",
-              "inverse-on-surface": "#f3f0f0",
-              "surface-tint": "#2d694e",
-              "on-background": "#1b1c1c",
-              "rose-accent": "#C25E7A",
-              "accent-rose": "#C25E7A",
-            },
-            fontFamily: {
-              "headline": ["Newsreader", "serif"],
-              "body": ["Inter", "sans-serif"],
-              "label": ["Inter", "sans-serif"],
-              "serif-warm": ["EB Garamond", "serif"],
-            },
-            borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <title>Shohojatri | Psychosocial Welfare Initiative</title>
+  <meta name="description"
+    content="Shohojatri is a psychosocial welfare initiative dedicated to emotional empowerment, resilience, and the journey of healing — together." />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Inter:wght@300;400;500;600;700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#fbf9f8",
+            "surface": "#fbf9f8",
+            "surface-bright": "#fbf9f8",
+            "surface-dim": "#dcd9d9",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f6f3f2",
+            "surface-container": "#f0eded",
+            "surface-container-high": "#eae8e7",
+            "surface-container-highest": "#e4e2e1",
+            "on-surface": "#1b1c1c",
+            "on-surface-variant": "#404943",
+            "surface-variant": "#e4e2e1",
+            "outline": "#707973",
+            "outline-variant": "#bfc9c1",
+            "primary": "#115238",
+            "primary-container": "#2e6a4f",
+            "primary-fixed": "#b1f0ce",
+            "primary-fixed-dim": "#96d4b3",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#a9e7c5",
+            "on-primary-fixed": "#002113",
+            "on-primary-fixed-variant": "#105138",
+            "inverse-primary": "#96d4b3",
+            "secondary": "#446900",
+            "secondary-container": "#abf926",
+            "secondary-fixed": "#abf926",
+            "secondary-fixed-dim": "#92db00",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#486f00",
+            "on-secondary-fixed": "#111f00",
+            "on-secondary-fixed-variant": "#324f00",
+            "tertiary": "#7e2844",
+            "tertiary-container": "#9c405b",
+            "tertiary-fixed": "#ffd9e0",
+            "tertiary-fixed-dim": "#ffb1c3",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-container": "#ffcdd7",
+            "on-tertiary-fixed": "#3f0019",
+            "on-tertiary-fixed-variant": "#7d2743",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "on-error": "#ffffff",
+            "on-error-container": "#93000a",
+            "inverse-surface": "#303030",
+            "inverse-on-surface": "#f3f0f0",
+            "surface-tint": "#2d694e",
+            "on-background": "#1b1c1c",
+            "rose-accent": "#C25E7A",
+            "accent-rose": "#C25E7A",
           },
+          fontFamily: {
+            "headline": ["Newsreader", "serif"],
+            "body": ["Inter", "sans-serif"],
+            "label": ["Inter", "sans-serif"],
+            "serif-warm": ["EB Garamond", "serif"],
+          },
+          borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
         },
-      }
-    </script>
-    <style>
-      .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        vertical-align: middle;
-      }
-      .serif-italic { font-family: "Newsreader", serif; font-style: italic; }
-      .serif-regular { font-family: "Newsreader", serif; }
-      .apple-garamond { font-family: "EB Garamond", serif; }
-      .font-mercury { font-family: "Newsreader", serif; }
-      .font-neue { font-family: "Inter", sans-serif; }
-      .font-garamond { font-family: "Newsreader", serif; font-style: italic; }
-      .glass-nav {
-        background: rgba(251, 249, 248, 0.8);
-        backdrop-filter: blur(12px);
-      }
-      .ribbon-xs {
-        width: 12px;
-        height: 18px;
-        background-color: #115238;
-        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 85%, 0% 100%);
-        display: inline-block;
-        flex-shrink: 0;
-      }
-      .ribbon-lime { background-color: #9ae600; }
-      .ribbon-bullet::before {
-        content: "";
-        display: inline-block;
-        width: 12px;
-        height: 12px;
-        background-color: #C25E7A;
-        mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12,2L4,5V11C4,16.55 7.84,21.74 13,23C18.16,21.74 22,16.55 22,11V5L14,2H12Z'/></svg>") no-repeat center;
-        -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12,2L4,5V11C4,16.55 7.84,21.74 13,23C18.16,21.74 22,16.55 22,11V5L14,2H12Z'/></svg>") no-repeat center;
-        margin-right: 12px;
-      }
-      .bg-grain {
-        background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBJbxdc-mFAVOQUE8VHvyYFKO3vIdNJGaoemPHkYV-kMnfFdXhuhmhx9LZvoGr9vhDEeo4ZQjej-tu_kWc58GmLRdbqSkhAkwIOwhkrO3TqumJZ2jMeiilPlIvRLS-zA67leDpEFH0Cc6OPnCJtc4AXSqu9BtK4U5DeRSmugZ6Nbw8gKIOAINiXqX3dya7-CZdt09MRKfz0mUS-Dp-HOa1laGUev38MkQ_OXZSNLOPa7XTQEzsa5KZbn84vV85eH_RdxNv5hLMn4fR8);
-      }
-      .grain-overlay {
-        background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDrXgBuONARdD0jp10IDEVgtEnAEri-KPEatZxDOrAothWUVhk0QRKJSz-20fzNVUmGrjXdf1HGMxIUx2vIJ0GCi24t1URfUD4wVRcOUf0k3qXkNoOKfkbVvutKl4Zq2mgDstKIJ2Y4Z_Qi-hwSjJeJ6TYJsa41img-7KBRjUwhw4hqm9ZyvqKIFCoXmfpfY0u4XAHxAkkedq31pUEMd1CNqurf54mcxzRbrRawSYhda6TA-b_6EBRczeu128DOpgqkQOFdBVxnAYgh);
-      }
-      .ribbon-icon { font-variation-settings: 'FILL' 1; color: #115238; }
-      .blog-card-shadow { box-shadow: 0 4px 32px rgba(46, 106, 79, 0.07); }
-      .editorial-shadow { box-shadow: 0 4px 32px rgba(46, 106, 79, 0.07); }
-      .floating-label-input:focus-within label {
-        transform: translateY(-1.5rem) scale(0.85);
-        color: #115238;
-      }
-      .floating-label-input label {
-        transition: all 0.2s ease-out;
-        pointer-events: none;
-      }
-      .no-scrollbar::-webkit-scrollbar { display: none; }
-      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-    </style>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+
+    .serif-italic {
+      font-family: "Newsreader", serif;
+      font-style: italic;
+    }
+
+    .serif-regular {
+      font-family: "Newsreader", serif;
+    }
+
+    .apple-garamond {
+      font-family: "EB Garamond", serif;
+    }
+
+    .font-mercury {
+      font-family: "Newsreader", serif;
+    }
+
+    .font-neue {
+      font-family: "Inter", sans-serif;
+    }
+
+    .font-garamond {
+      font-family: "Newsreader", serif;
+      font-style: italic;
+    }
+
+    .glass-nav {
+      background: rgba(251, 249, 248, 0.8);
+      backdrop-filter: blur(12px);
+    }
+
+    .ribbon-xs {
+      width: 12px;
+      height: 18px;
+      background-color: #115238;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 85%, 0% 100%);
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .ribbon-lime {
+      background-color: #9ae600;
+    }
+
+    .ribbon-bullet::before {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background-color: #C25E7A;
+      mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12,2L4,5V11C4,16.55 7.84,21.74 13,23C18.16,21.74 22,16.55 22,11V5L14,2H12Z'/></svg>") no-repeat center;
+      -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12,2L4,5V11C4,16.55 7.84,21.74 13,23C18.16,21.74 22,16.55 22,11V5L14,2H12Z'/></svg>") no-repeat center;
+      margin-right: 12px;
+    }
+
+    .bg-grain {
+      background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBJbxdc-mFAVOQUE8VHvyYFKO3vIdNJGaoemPHkYV-kMnfFdXhuhmhx9LZvoGr9vhDEeo4ZQjej-tu_kWc58GmLRdbqSkhAkwIOwhkrO3TqumJZ2jMeiilPlIvRLS-zA67leDpEFH0Cc6OPnCJtc4AXSqu9BtK4U5DeRSmugZ6Nbw8gKIOAINiXqX3dya7-CZdt09MRKfz0mUS-Dp-HOa1laGUev38MkQ_OXZSNLOPa7XTQEzsa5KZbn84vV85eH_RdxNv5hLMn4fR8);
+    }
+
+    .grain-overlay {
+      background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDrXgBuONARdD0jp10IDEVgtEnAEri-KPEatZxDOrAothWUVhk0QRKJSz-20fzNVUmGrjXdf1HGMxIUx2vIJ0GCi24t1URfUD4wVRcOUf0k3qXkNoOKfkbVvutKl4Zq2mgDstKIJ2Y4Z_Qi-hwSjJeJ6TYJsa41img-7KBRjUwhw4hqm9ZyvqKIFCoXmfpfY0u4XAHxAkkedq31pUEMd1CNqurf54mcxzRbrRawSYhda6TA-b_6EBRczeu128DOpgqkQOFdBVxnAYgh);
+    }
+
+    .ribbon-icon {
+      font-variation-settings: 'FILL' 1;
+      color: #115238;
+    }
+
+    .blog-card-shadow {
+      box-shadow: 0 4px 32px rgba(46, 106, 79, 0.07);
+    }
+
+    .editorial-shadow {
+      box-shadow: 0 4px 32px rgba(46, 106, 79, 0.07);
+    }
+
+    .floating-label-input:focus-within label {
+      transform: translateY(-1.5rem) scale(0.85);
+      color: #115238;
+    }
+
+    .floating-label-input label {
+      transition: all 0.2s ease-out;
+      pointer-events: none;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>

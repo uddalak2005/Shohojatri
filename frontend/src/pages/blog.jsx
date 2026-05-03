@@ -3,6 +3,7 @@ import Navbar from '../components/global/Navbar';
 import BlogHero from '../components/blog/BlogHero';
 import BlogGrid from '../components/blog/BlogGrid';
 import Footer from '../components/global/Footer';
+import Loader from '../components/global/Loader';
 import { client } from '../utils/sanity';
 
 export default function Blog() {
@@ -24,6 +25,10 @@ export default function Blog() {
 
     fetchData();
   }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="bg-[#f8fdf8] font-body">

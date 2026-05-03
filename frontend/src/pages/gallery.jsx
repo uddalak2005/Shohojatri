@@ -1,14 +1,13 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/global/Navbar';
 import GalleryHero from '../components/gallery/GalleryHero';
-import GalleryFilters from '../components/gallery/GalleryFilters';
 import GalleryGrid from '../components/gallery/GalleryGrid';
 import Footer from '../components/global/Footer';
+import Loader from '../components/global/Loader';
 import { client } from '../utils/sanity';
 
 export default function Gallery() {
   const [items, setItems] = useState([]);
-  const [activeFilter, setActiveFilter] = useState('All');
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
@@ -29,40 +28,21 @@ export default function Gallery() {
     fetchData();
   }, []);
 
-  const tags = useMemo(() => {
-    const allTags = items.flatMap(item => item.tags || (item.tag ? [item.tag] : []));
-    return ['All', ...new Set(allTags)];
-  }, [items]);
-
-  const filteredItems = useMemo(() => {
-    if (activeFilter === 'All') return items;
-    return items.filter(item => {
-      const itemTags = item.tags || (item.tag ? [item.tag] : []);
-      return itemTags.some(t => t.toLowerCase() === activeFilter.toLowerCase());
-    });
-  }, [items, activeFilter]);
-
-  // Reset to first page when filter changes
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [activeFilter]);
-
-  const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
-  const currentItems = filteredItems.slice(
+  const totalPages = Math.ceil(items.length / itemsPerPage);
+  const currentItems = items.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="bg-background font-body">
       <Navbar />
       <main className="pt-[72px]">
         <GalleryHero />
-        <GalleryFilters 
-          tags={tags}
-          activeFilter={activeFilter} 
-          onFilterChange={setActiveFilter} 
-        />
         <GalleryGrid 
           items={currentItems} 
           loading={loading} 
@@ -75,3 +55,4 @@ export default function Gallery() {
     </div>
   );
 }
+

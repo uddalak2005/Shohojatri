@@ -24,8 +24,6 @@ const Footer = () => {
   const achintyaPhone = details?.phoneNumber
   const socials = details?.socials
 
-  console.log(details);
-
   return (
     <footer className="w-full py-24 px-12 bg-[#115238] relative overflow-hidden">
       {/* Background Watermark */}
@@ -77,8 +75,8 @@ const Footer = () => {
         <div>
           <h4 className="font-label text-xs tracking-widest uppercase text-[#9ae600] mb-8 font-bold">Follow Us</h4>
           <div className="flex flex-col gap-4 font-label text-sm text-white/70">
-            {socials?.map((social) => (
-              <a key={social._id} className="hover:text-[#9ae600] transition-all" href={social.url} target="_blank" rel="noopener noreferrer">
+            {socials?.map((social, index) => (
+              <a key={social._key || index} className="hover:text-[#9ae600] transition-all" href={social.url} target="_blank" rel="noopener noreferrer">
                 {social.platform}
               </a>
             ))}

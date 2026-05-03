@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/uddalak2005/Shohojatri#readme",
   "dependencies": {
+    "@portabletext/react": "^6.0.3",
     "@sanity/client": "^7.21.0",
     "@sanity/image-url": "^2.1.1",
     "framer-motion": "^12.38.0",

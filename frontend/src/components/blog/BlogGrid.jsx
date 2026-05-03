@@ -12,14 +12,6 @@ const BlogGrid = ({ posts, loading }) => {
     return '';
   };
 
-  if (loading) {
-    return (
-      <div className="px-12 py-24 flex justify-center">
-        <div className="animate-pulse text-[#2e6a4f] serif-regular text-2xl">Gathering stories...</div>
-      </div>
-    );
-  }
-
   if (!posts || posts.length === 0) {
     return (
       <div className="px-12 py-24 flex justify-center">

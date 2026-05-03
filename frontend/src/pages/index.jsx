@@ -11,6 +11,7 @@ import BlogPreview from '../components/home/BlogPreview';
 import Members from '../components/home/Members';
 import PartnersMarquee from '../components/home/PartnersMarquee';
 import Footer from '../components/global/Footer';
+import Loader from '../components/global/Loader';
 import { client, urlFor } from '../utils/sanity';
 
 export default function Home() {
@@ -19,10 +20,12 @@ export default function Home() {
   const [members, setMembers] = useState([]);
   const [partners, setPartners] = useState([]);
   const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Fetch home page settings, milestones, members, partners, and blogs
     const fetchData = async () => {
+      setLoading(true);
       const homeQuery = `*[_type == "homePage"][0]{
         ...,
         "aboutVideo": aboutVideo.asset->url
@@ -45,14 +48,15 @@ export default function Home() {
       setMembers(mems);
       setPartners(pts);
       setBlogs(blgs);
+      setLoading(false);
     };
 
     fetchData();
   }, []);
 
-  console.log(homeData);
-  console.log(milestones);
-  console.log(members);
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="bg-background text-on-surface font-body selection:bg-secondary-fixed selection:text-on-secondary-fixed">
@@ -62,7 +66,7 @@ export default function Home() {
         <AboutUs data={homeData?.aboutData} videoUrl={homeData?.aboutVideo} />
         <VisionMission />
         <Services />
-        <FounderDesk founderData={homeData?.founderImage ? { ...members.find(m => m.role === 'Founder & Director'), photo: urlFor(homeData.founderImage).url() } : null} />
+        <FounderDesk founderImage={homeData?.founderImage ? urlFor(homeData.founderImage).url() : null} />
         <Milestones data={milestones} />
         <AchintyaSpotlight />
         <BlogPreview data={blogs} />

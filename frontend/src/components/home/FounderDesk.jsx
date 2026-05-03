@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { members } from '../../data/members';
 import SectionHeader from '../global/SectionHeader';
 import RibbonIcon from '../global/RibbonIcon';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
@@ -12,10 +11,19 @@ const bioText = [
   "She has published in national and international peer-reviewed journals, UGC and Scopus indexed, National and International journals and has presented papers at UGC-funded and UGC care indexed national and international conferences. She has received best paper awards at UGC conferences. She received 2 Awards from International Academic forums. She has a UGC best paper book proceeding. Additionally, she had conducted workshops on Psychoanalysis, Research methodology and statistical analysis, Psychological Disorders and different workshops contributing to the capacity building and evidence-based psychological practice. Her work reflects a sustained commitment to empirical research, inclusive psychological practice, and interdisciplinary engagement."
 ];
 
-const FounderDesk = ({ founderData }) => {
+const founderDetails = {
+  name: 'Dr. Debangana Bhattacharya',
+  role: 'Founder & Director',
+  department: 'Psychological Wellness Foundation',
+  affiliation: 'Shohojatri',
+  initiative: 'A Mental Health Initiative'
+};
+
+const FounderDesk = ({ founderImage }) => {
   const sectionRef = useScrollAnimation();
   const [isBioOpen, setIsBioOpen] = useState(false);
-  const founder = founderData || members.find(m => m.role === 'Founder & Director');
+  
+  const founder = { ...founderDetails, photo: founderImage };
 
   useEffect(() => {
     if (isBioOpen) {
@@ -26,7 +34,7 @@ const FounderDesk = ({ founderData }) => {
     return () => { document.body.style.overflow = 'unset'; };
   }, [isBioOpen]);
 
-  if (!founder) return null;
+  if (!founderImage) return null;
 
   return (
     // ✅ FIX 2: Section is full-width wrapper, inner div handles container + grid
@@ -201,52 +209,73 @@ const FounderDesk = ({ founderData }) => {
 
       </div>
 
-      {/* ── Bio Modal Overlay ── */}
+      {/* ── Premium Bio Modal Overlay ── */}
       {isBioOpen && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 opacity-0 animate-in fade-in duration-300"
-          style={{ background: 'rgba(17,52,36,0.6)', backdropFilter: 'blur(8px)', opacity: 1 }}
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 lg:p-12 opacity-0 animate-in fade-in duration-500"
+          style={{ background: 'rgba(17,52,36,0.7)', backdropFilter: 'blur(12px)', opacity: 1 }}
           onClick={() => setIsBioOpen(false)}
         >
           <div 
-            className="bg-white rounded-2xl max-w-3xl w-full max-h-[85vh] overflow-y-auto shadow-2xl relative translate-y-4 animate-in slide-in-from-bottom-4 duration-300"
-            style={{ border: '1px solid rgba(46,106,79,0.1)', transform: 'translateY(0)' }}
+            className="bg-[#f8fdf8] rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-hidden shadow-2xl relative translate-y-4 animate-in slide-in-from-bottom-8 duration-500 flex flex-col md:flex-row"
+            style={{ border: '1px solid rgba(154,230,0,0.2)', transform: 'translateY(0)' }}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close button */}
-            <button 
-              onClick={() => setIsBioOpen(false)}
-              className="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 flex items-center justify-center rounded-full bg-[#2e6a4f]/5 text-[#2e6a4f] hover:bg-[#2e6a4f]/10 transition-colors z-10"
-              aria-label="Close bio"
-            >
-              <span className="material-symbols-outlined">close</span>
-            </button>
+            {/* Left Pane - Portrait & Branding */}
+            <div className="hidden md:block md:w-2/5 relative bg-[#113424] overflow-hidden">
+              <img 
+                src={founder.photo} 
+                alt={founder.name} 
+                className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-60 scale-105 hover:scale-100 transition-transform duration-1000" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#113424] via-[#113424]/60 to-transparent"></div>
+              <div className="absolute bottom-12 left-10 right-10">
+                <RibbonIcon size="lg" color="rgba(154,230,0,0.8)" className="mb-8 drop-shadow-lg" />
+                <h3 className="serif-italic text-4xl text-white mb-3 leading-tight">{founder.name}</h3>
+                <p className="font-label text-xs uppercase tracking-[0.2em] text-[#9ae600]">{founder.role}</p>
+                <div className="h-[1px] w-12 bg-[#9ae600]/30 mt-6" />
+              </div>
+            </div>
 
-            <div className="p-8 sm:p-12 relative overflow-hidden">
-              {/* Decorative background watermark inside modal */}
-              <div className="absolute -top-10 -left-10 opacity-[0.03] pointer-events-none transform -rotate-12 scale-150">
-                <RibbonIcon size="lg" color="#2e6a4f" />
+            {/* Right Pane - Scrollable Bio Content */}
+            <div className="w-full md:w-3/5 relative flex flex-col h-full max-h-[85vh] md:max-h-[90vh]">
+              {/* Floating Header / Close Button Area */}
+              <div className="absolute top-0 left-0 right-0 p-6 flex justify-end z-20 pointer-events-none">
+                <button 
+                  onClick={() => setIsBioOpen(false)}
+                  className="pointer-events-auto w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-sm text-[#2e6a4f] hover:bg-[#C25E7A] hover:text-white transition-all border border-[#2e6a4f]/10"
+                  aria-label="Close bio"
+                >
+                  <span className="material-symbols-outlined text-[20px]">close</span>
+                </button>
               </div>
 
-              <div className="relative z-10">
-                <div className="flex items-center gap-4 mb-2">
-                  <div className="h-[2px] w-12" style={{ background: 'linear-gradient(to right, #9ae600, rgba(154,230,0,0.2))' }} />
-                  <span className="text-[#C25E7A] tracking-widest text-xs uppercase font-medium" style={{ fontFamily: 'var(--font-body)' }}>
-                    Founder & Director
-                  </span>
+              {/* Scrollable Text Area */}
+              <div className="p-8 sm:p-12 lg:p-16 overflow-y-auto no-scrollbar relative z-10 h-full">
+                 {/* Mobile Header (Hidden on Desktop) */}
+                 <div className="md:hidden mb-8 pb-8 border-b border-[#2e6a4f]/10 mt-6">
+                    <RibbonIcon size="md" color="#C25E7A" className="mb-4" />
+                    <h3 className="serif-italic text-3xl text-[#2e6a4f] mb-2">{founder.name}</h3>
+                    <p className="font-label text-xs uppercase tracking-widest text-[#C25E7A]">{founder.role}</p>
+                 </div>
+
+                {/* Typography styled Bio */}
+                <div className="space-y-6 text-[#3a3a3a] leading-[1.8] font-light text-[15px] lg:text-[16px]">
+                  {bioText.map((paragraph, index) => (
+                    <p 
+                      key={index} 
+                      className={index === 0 ? "first-letter:text-6xl first-letter:font-display first-letter:text-[#C25E7A] first-letter:float-left first-letter:mr-4 first-letter:mt-2 first-line:uppercase first-line:tracking-widest first-line:text-xs" : ""}
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
                 </div>
                 
-                <h3 
-                  className="text-[#2e6a4f] mb-8"
-                  style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(28px, 4vw, 36px)', fontWeight: 400, lineHeight: 1.2 }}
-                >
-                  Dr. Debangana Bhattacharya
-                </h3>
-                
-                <div className="space-y-6 text-[#4a4a4a] leading-[1.85]" style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(15px, 1.2vw, 16px)', fontWeight: 300 }}>
-                  {bioText.map((paragraph, index) => (
-                    <p key={index}>{paragraph}</p>
-                  ))}
+                {/* End mark */}
+                <div className="flex justify-center mt-12 opacity-30">
+                  <span className="w-1 h-1 rounded-full bg-[#2e6a4f] mx-1"></span>
+                  <span className="w-1 h-1 rounded-full bg-[#2e6a4f] mx-1"></span>
+                  <span className="w-1 h-1 rounded-full bg-[#2e6a4f] mx-1"></span>
                 </div>
               </div>
             </div>
