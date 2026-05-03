@@ -1,0 +1,79 @@
+import { urlFor } from '../../utils/sanity';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
+import Button from '../global/Button';
+
+const BlogGrid = ({ posts, loading }) => {
+  const sectionRef = useScrollAnimation();
+
+  const getPhotoUrl = (photo) => {
+    if (!photo) return '';
+    if (typeof photo === 'string') return photo;
+    if (photo.asset) return urlFor(photo).url();
+    return '';
+  };
+
+  if (loading) {
+    return (
+      <div className="px-12 py-24 flex justify-center">
+        <div className="animate-pulse text-[#2e6a4f] serif-regular text-2xl">Gathering stories...</div>
+      </div>
+    );
+  }
+
+  if (!posts || posts.length === 0) {
+    return (
+      <div className="px-12 py-24 flex justify-center">
+        <div className="text-[#888888] font-label text-sm uppercase tracking-widest">No stories published yet. Check back soon.</div>
+      </div>
+    );
+  }
+
+  const displayPosts = posts;
+
+  return (
+    <section className="px-12 py-24 max-w-[1280px] mx-auto">
+      <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 animate">
+        {displayPosts.map((post) => (
+          <article key={post._id || post.id} className="group flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-[#2e6a4f]/5">
+            <div className="aspect-video relative overflow-hidden bg-gray-100">
+              <img 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                src={getPhotoUrl(post.image)} 
+                alt={post.title}
+                loading="lazy"
+                decoding="async"
+              />
+              <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-[#2e6a4f]">
+                {post.category}
+              </span>
+            </div>
+            
+            <div className="p-8 flex flex-col flex-grow space-y-4">
+              <div className="flex items-center gap-3 font-label text-[10px] uppercase tracking-widest text-[#888888]">
+                <span>{post.date}</span>
+                <span className="w-1 h-1 rounded-full bg-[#C25E7A]"></span>
+                <span>{post.author}</span>
+              </div>
+              
+              <h3 className="serif-italic text-2xl text-[#2e6a4f] leading-tight group-hover:text-[#C25E7A] transition-colors">
+                {post.title}
+              </h3>
+              
+              <p className="font-label font-light text-sm text-[#3a3a3a] leading-relaxed line-clamp-3">
+                {post.excerpt}
+              </p>
+              
+              <div className="pt-4 mt-auto">
+                <Button variant="text" href={`/blog/${post.slug?.current || post.slug}`} className="text-[#C25E7A]">
+                  Read More →
+                </Button>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default BlogGrid;
