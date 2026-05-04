@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import ScrollToTop from './components/global/ScrollToTop.jsx';
 import Loader from './components/global/Loader.jsx';
 
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Suspense>
+      <Analytics />
     </BrowserRouter>
   );
 }
