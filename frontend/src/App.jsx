@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/index.jsx';
-import Achintya from './pages/Achintya.jsx';
-import Gallery from './pages/Gallery.jsx';
-import Blog from './pages/Blog.jsx';
+import Achintya from './pages/achintya.jsx';
+import Gallery from './pages/gallery.jsx';
+import Blog from './pages/blog.jsx';
 import BlogPost from './pages/BlogPost.jsx';
-import Contact from './pages/Contact.jsx';
+import Contact from './pages/contact.jsx';
 import ScrollToTop from './components/global/ScrollToTop.jsx';
 
 export default function App() {
