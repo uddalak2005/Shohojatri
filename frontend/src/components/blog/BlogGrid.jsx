@@ -2,7 +2,7 @@ import { urlFor } from '../../utils/sanity';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 import Button from '../global/Button';
 
-const BlogGrid = ({ posts, loading }) => {
+const BlogGrid = ({ posts, loading, currentPage = 1, totalPages = 1, onPageChange }) => {
   const sectionRef = useScrollAnimation();
 
   const getPhotoUrl = (photo) => {
@@ -64,6 +64,44 @@ const BlogGrid = ({ posts, loading }) => {
           </article>
         ))}
       </div>
+
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <div className="mt-24 flex items-center justify-center gap-6 font-label text-sm tracking-widest text-[#2e6a4f]/60">
+          <button 
+            disabled={currentPage === 1}
+            onClick={() => onPageChange(currentPage - 1)}
+            className={`transition-colors ${currentPage === 1 ? 'opacity-30 cursor-not-allowed' : 'hover:text-[#2e6a4f]'}`}
+          >
+            ← PREV
+          </button>
+          
+          <div className="flex items-center gap-4">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <span 
+                key={page}
+                onClick={() => onPageChange(page)}
+                className={`
+                  w-10 h-10 rounded-full flex items-center justify-center font-bold cursor-pointer transition-all
+                  ${currentPage === page 
+                    ? 'bg-[#2e6a4f] text-white shadow-lg' 
+                    : 'hover:text-[#2e6a4f] hover:bg-[#2e6a4f]/5'}
+                `}
+              >
+                {page}
+              </span>
+            ))}
+          </div>
+
+          <button 
+            disabled={currentPage === totalPages}
+            onClick={() => onPageChange(currentPage + 1)}
+            className={`transition-colors ${currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : 'hover:text-[#2e6a4f]'}`}
+          >
+            NEXT →
+          </button>
+        </div>
+      )}
     </section>
   );
 };

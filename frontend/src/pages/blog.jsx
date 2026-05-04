@@ -9,6 +9,8 @@ import { client } from '../utils/sanity';
 export default function Blog() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 9;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,6 +28,12 @@ export default function Blog() {
     fetchData();
   }, []);
 
+  const totalPages = Math.ceil(posts.length / itemsPerPage);
+  const currentItems = posts.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
   if (loading) {
     return <Loader />;
   }
@@ -35,7 +43,13 @@ export default function Blog() {
       <Navbar />
       <main className="pt-[72px]">
         <BlogHero />
-        <BlogGrid posts={posts} loading={loading} />
+        <BlogGrid 
+          posts={currentItems} 
+          loading={loading} 
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
+        />
       </main>
       <Footer />
     </div>
