@@ -32,11 +32,14 @@ export default function Contact() {
             <ContactForm />
           </div>
         </section>
-        
+
         <section className="h-[400px] w-full bg-[#2e6a4f]/5 overflow-hidden rounded-t-[100px] relative">
           <iframe
             title="Location Map"
-            src={settings?.mapUrl || "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117925.33439927705!2d88.2649514755106!3d22.53540637453472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f882db4908f667%3A0x43e330e68f6c2cbc!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"}
+            src={
+              settings?.mapUrl ||
+              "https://www.openstreetmap.org/export/embed.html?bbox=88.3912448,22.5138173,88.3952448,22.5168173&layer=mapnik&marker=22.5153173,88.3932448"
+            }
             width="100%"
             height="100%"
             style={{ border: 0 }}

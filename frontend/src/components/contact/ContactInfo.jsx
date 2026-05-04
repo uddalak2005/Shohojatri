@@ -9,6 +9,7 @@ const ContactInfo = ({ data }) => {
   const shohojatriPhone = data?.phone || '+91 99034 91795 / +91 60037 14239';
   const achintyaEmail = data?.achintyaEmail || 'weareachintya@gmail.com';
   const achintyaPhone = data?.achintyaPhone || '9875692385';
+  const address = data?.address || 'D25- Rajdanga, Nabapally, Post Office EKTP (East KolkataTownship), Kolkata, 700107. Opposite Acropolis Mall, Kasba.';
 
   const socialLinks = data?.socialLinks || [
     { platform: 'Instagram (Shohojatri)', href: 'https://www.instagram.com/shohojatri?igsh=NzJ2bjZ3eXpqbTF4', icon: 'photo_camera' },
@@ -26,13 +27,14 @@ const ContactInfo = ({ data }) => {
       
       <div className="space-y-8">
         {[
+          { icon: 'location_on', label: 'Address', val: address },
           { icon: 'mail', label: 'Email Us', val: shohojatriEmail, href: `mailto:${shohojatriEmail}` },
           { icon: 'call', label: 'Call Us (Shohojatri)', val: shohojatriPhone },
           { icon: 'mail_lock', label: 'Achintya Email', val: achintyaEmail, href: `mailto:${achintyaEmail}` },
           { icon: 'phone_iphone', label: 'Achintya Mobile', val: achintyaPhone, href: `tel:${achintyaPhone}` }
         ].map((item) => (
           <div key={item.label} className="flex items-start gap-6 group">
-            <div className="w-12 h-12 rounded-full bg-[#2e6a4f]/10 flex items-center justify-center text-[#2e6a4f] group-hover:bg-[#2e6a4f] group-hover:text-white transition-all">
+            <div className="w-12 h-12 shrink-0 rounded-full bg-[#2e6a4f]/10 flex items-center justify-center text-[#2e6a4f] group-hover:bg-[#2e6a4f] group-hover:text-white transition-all">
               {item.href ? (
                 <a href={item.href} className="flex items-center justify-center w-full h-full">
                   <span className="material-symbols-outlined">{item.icon}</span>

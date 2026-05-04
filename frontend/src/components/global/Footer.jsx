@@ -23,6 +23,7 @@ const Footer = () => {
   const achintyaEmail = details?.workshopEmail
   const achintyaPhone = details?.phoneNumber
   const socials = details?.socials
+  const address = details?.address || 'D25- Rajdanga, Nabapally, Post Office EKTP (East KolkataTownship), Kolkata, 700107. Opposite Acropolis Mall, Kasba.'
 
   return (
     <footer className="w-full py-24 px-12 bg-[#115238] relative overflow-hidden">
@@ -61,6 +62,9 @@ const Footer = () => {
 
         <div>
           <h4 className="font-label text-xs tracking-widest uppercase text-[#9ae600] mb-8 font-bold">Reach Us</h4>
+          <p className="font-label text-sm text-white/70 leading-relaxed mb-4">
+            {address}
+          </p>
           <p className="font-label text-sm text-white/70 leading-relaxed">
             <a href={`mailto:${shohojatriEmail}`} className="hover:text-white">{shohojatriEmail}</a><br />
             {shohojatriPhone}
