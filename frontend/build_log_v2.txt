@@ -1,13 +1,0 @@
-
-> shohojatri@1.0.0 build
-> vite build
-
-vite v8.0.1 building client environment for production...
-[2Ktransforming...✓ 69 modules transformed.
-rendering chunks...
-computing gzip size...
-dist/index.html                   6.76 kB │ gzip:  2.54 kB
-dist/assets/index-C_PufxGb.css    1.81 kB │ gzip:  0.79 kB
-dist/assets/index--U6Dxec8.js   293.17 kB │ gzip: 92.06 kB
-
-✓ built in 617ms
